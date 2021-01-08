@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+@extends('layouts.master')
+
+@section('navbarTitle2')
+<a href="#" class="nav-link">Pengaduan</a>
+@endsection
+
+@section('content')
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h6>Kirim pesan ke Pak Riadi Budiman ST. MT.</h6>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ route('mahasiswa.home') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Pengaduan</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <!-- Timelime example  -->
+    <div class="row">
+      <div class="col-md-12">
+        <!-- The time line -->
+        <div class="timeline">
+          <!-- timeline time label -->
+          <div class="time-label">
+            {{--  <span class="bg-red">17 Jun. 2020</span>  --}}
+          </div>
+          <!-- /.timeline-label -->
+          @if(session()->get('success'))
+          <div class="alert alert-success">
+            {{ session()->get('success') }}
+          </div><br/>
+        @endif
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-envelope bg-blue"></i>
+            <div class="timeline-item">
+                        <div class="col-md-auto">
+                            <!-- DIRECT CHAT SUCCESS -->
+                            <div class="card card-sucress cardutline direct-chat direct-chat-success">
+                              <div class="card-header">
+                                <h3 class="card-title">Direct Chat</h3>
+
+                                <div class="card-tools">
+                                  <span data-toggle="tooltip" title="3 New Messages" class="badge bg-success">3</span>
+                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                  </button>
+                                  <button type="button" class="btn btn-tool" data-toggle="tooltip" title="Contacts"
+                                          data-widget="chat-pane-toggle">
+                                    <i class="fas fa-comments"></i></button>
+                                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                                  </button>
+                                </div>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <!-- Conversations are loaded here -->
+                                <div class="direct-chat-messages">
+                                  <!-- Message. Default to the left -->
+                                  <div class="direct-chat-msg">
+                                    <div class="direct-chat-infos clearfix">
+                                      <span class="direct-chat-name float-left">{{ Auth::user()->name }}</span>
+                                      <span class="direct-chat-timestamp float-right"><?php date_default_timezone_set('Asia/Jakarta'); echo date(' l, d-M-Y / h : i ') ?></span>
+                                    </div>
+                                    <!-- /.direct-chat-infos -->
+                                    <img class="direct-chat-img" src="{{ asset('foto/adminSekretaris/' . auth()->user()->foto) }}" alt="Message User Image">
+                                    <!-- /.direct-chat-img -->
+                                    <div class="direct-chat-text">
+                                      Is this template really for free? Thats unbelievable!
+                                    </div>
+                                    <!-- /.direct-chat-text -->
+                                  </div>
+                                  <!-- /.direct-chat-msg -->
+
+                                  <!-- Message to the right -->
+                                  <div class="direct-chat-msg right">
+                                    <div class="direct-chat-infos clearfix">
+                                      <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                      <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                    </div>
+                                    <!-- /.direct-chat-infos -->
+                                    <img class="direct-chat-img" src="{{ asset('foto/adminSekretaris/' . auth()->user()->foto) }}" alt="Message User Image">
+                                    <!-- /.direct-chat-img -->
+                                    <div class="direct-chat-text">
+                                      You better believe it!
+                                    </div>
+                                    <!-- /.direct-chat-text -->
+                                  </div>
+                                  <!-- /.direct-chat-msg -->
+                                </div>
+                                <!--/.direct-chat-messages-->
+
+                                <!-- Contacts are loaded here -->
+                                <div class="direct-chat-contacts">
+                                  <ul class="contacts-list">
+                                    <li>
+                                      <a href="#">
+                                        <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg">
+
+                                        <div class="contacts-list-info">
+                                          <span class="contacts-list-name">
+                                            Count Dracula
+                                            <small class="contacts-list-date float-right">2/28/2015</small>
+                                          </span>
+                                          <span class="contacts-list-msg">How have you been? I was...</span>
+                                        </div>
+                                        <!-- /.contacts-list-info -->
+                                      </a>
+                                    </li>
+                                    <!-- End Contact Item -->
+                                  </ul>
+                                  <!-- /.contatcts-list -->
+                                </div>
+                                <!-- /.direct-chat-pane -->
+                              </div>
+                              <!-- /.card-body -->
+                              <div class="card-footer">
+                                <form method="POST" action="{{ route('pengaduan.sendMhs') }} " enctype="multipart/form-data">
+                                    @csrf
+                                  <div class="input-group">
+                                    <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                    <span class="input-group-append">
+                                      <button type="submit" class="btn btn-success">Send</button>
+                                    </span>
+                                  </div>
+                                </form>
+                              </div>
+                              <!-- /.card-footer-->
+                            </div>
+                            <!--/.direct-chat -->
+                          </div>
+                          <!-- /.col -->
+            </div>
+          </div>
+          <!-- END timeline item -->
+        </div>
+      </div>
+      <!-- /.col -->
+    </div>
+  </div>
+  <!-- /.timeline -->
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+@endsection
+
+@section('content')
+
+@endsection
+
+<script type=”text/javascript”>
+    document.querySelector(".third").addEventListener('click', function(){
+        swal("Our First Alert", "With some body text and success icon!", "success");
+      });
+</script>
+
+</body>
+</html>
