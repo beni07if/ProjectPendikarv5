@@ -402,6 +402,4 @@ class MahasiswaController extends Controller
         // return view('authMahasiswa.register', compact('mahasiswa'));
         return view('koordinator.pengaduan.pesanPersonalVsMhs', compact('pengaduan', 'mahasiswa', 'user'));
     }
-
-    test
 }
