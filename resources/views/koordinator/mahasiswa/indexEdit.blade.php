@@ -49,13 +49,78 @@
 
               <p class="text-muted text-center">{{ Auth::user()->nip }}</p>
 
-              <ul class="list-group list-group-unbordered mb-3">
-                <li class="list-group-item">
-                    <b>Email</b> <a class="float-right text-muted">{{ Auth::user()->email }}</a>
-                </li>
-              </ul>
+              @if (Auth::check())
+             @foreach($koordinator as $koor)
+              <form method="POST" action="{{ route('updateDataKoordinator', $koor->id) }}" enctype="multipart/form-data">
+                    @csrf
 
-              <a href="{{ route('editDataKoordinator')}}" class="btn btn-primary btn-block"><b>Edit</b></a>
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="name" type="text" value="{{ $koor->name }}" class="form-control @error('name') is-invalid @enderror" name="name" required autocomplete="name">
+
+                            @error('naem')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nip" class="col-md-4 col-form-label text-md-right">{{ __('NIP') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="nip" type="text" value="{{ $koor->nip }}" class="form-control @error('nip') is-invalid @enderror" name="nip" required autocomplete="new-password">
+
+                            @error('nip')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="email" type="text" value="{{ $koor->email }}" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="current-password">
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+
+                        <div class="col-md-6">
+                            <div class="custom-file">
+                            <input type="file" name="foto" value="{{ $koor->foto }}" class="custom-file-input" required placeholder="Masukkan foto"
+                                oninvalid="this.setCustomValidity('Masukkan foto')" oninput="this.setCustomValidity('')">
+                            <label class="custom-file-label">Choose File</label>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Simpan') }}
+                            </button>
+
+                            {{--  @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            @endif  --}}
+                        </div>
+                    </div>
+                </form>
+                @endforeach
+                @endif
             </div>
             <!-- /.card-body -->
           </div>
@@ -81,9 +146,8 @@
                     @endif
             </div><!-- /.card-header -->
             <div class="card-body">
-                <form method="POST" action="{{ route('changePasswordSubmit') }}">
+                <form method="POST" action="{{ route('changePasswordSubmitAdmin') }}">
                     @csrf
-
                     <div class="form-group row">
                         <label for="current-password" class="col-md-4 col-form-label text-md-right">{{ __('Password Lama') }}</label>
 
@@ -123,18 +187,6 @@
                             @enderror
                         </div>
                     </div>
-
-                    {{--  <div class="form-group row">
-                        <div class="col-md-6 offset-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label" for="remember">
-                                    {{ __('Remember Me') }}
-                                </label>
-                            </div>
-                        </div>
-                    </div>  --}}
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">

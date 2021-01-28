@@ -181,6 +181,8 @@ Route::get('/tutor', 'MahasiswaController@keluarga')->name('tutor')->middleware(
 // Route::post('/changePasswordSubmit', 'MahasiswaController@changePasswordSubmit')->name('changePasswordSubmit');
 Route::post('/changePasswordSubmit', 'MahasiswaController@changePasswordSubmit')->name('changePasswordSubmit');
 Route::post('/changePasswordSubmitAdmin', 'AdminController@changePasswordSubmitAdmin')->name('changePasswordSubmitAdmin');
+Route::get('/edit-data-koordinator', 'AdminController@editDataKoordinator')->name('editDataKoordinator');
+Route::post('/update-data-koordinator/{id}', 'AdminController@updateDataKoordinator')->name('updateDataKoordinator');
 // Route::post('/tambahMahasiswa', 'MahasiswaController@tambahMahasiswa')->name('tambahMahasiswa');
 
 Route::post('/pengaduanSendMhs', 'PengaduanController@store')->name('pengaduan.sendMhs');
@@ -234,6 +236,7 @@ Route::get('/createmhs', function () {
 Route::get('/createadmin', function () {
     $post = new App\Admin();
     $post->name = 'Riadi Budiman';
+    $post->nip = '123456789';
     $post->email = 'riadi@gmail.com';
     $post->foto = 'riadi.jpg';
     $post->password = bcrypt('rrrrrrrr');

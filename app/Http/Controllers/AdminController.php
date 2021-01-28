@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mahasiswa;
+use App\Admin;
 use App\User;
 use Session;
 use Hash;
@@ -68,11 +69,12 @@ class AdminController extends Controller
     {
         $user = $this->middleware('auth:admin');
         // $user = $this->middleware('auth:mahasiswa');
-        $mahasiswa = User::all();
+        // $mahasiswa = User::all();
+        $koordinator = Admin::all();
         // $mahasiswa = User::where('id', 1)->get();
         // $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
         // $mahasiswa = User::all();
-        return view('koordinator.mahasiswa.index', compact('mahasiswa', 'user'));
+        return view('koordinator.mahasiswa.index', compact('koordinator', 'user'));
     }
     public function indexTutor()
     {
@@ -437,6 +439,32 @@ class AdminController extends Controller
         // $mahasiswa = User::where('keluarga', '3')->get();
         // $mahasiswa = User::all();
         return view('koordinator.mahasiswa.daftarMahasiswa', compact('mahasiswa', 'user'));
+    }
+
+    public function editDataKoordinator()
+    {
+        $user = $this->middleware('auth:admin');
+        $koordinator = Admin::all();
+        return view('koordinator.mahasiswa.indexEdit', compact('koordinator', 'user'));
+    }
+
+    public function updateDataKoordinator(Request $request, $id)
+    {
+        $this->validate($request, [
+            'foto' => 'required|image|mimes:jpg,png,jpeg'
+        ]);
+
+        $koordinator = Admin::findOrFail($id);
+        $koordinator->name = $request->input('name');
+        $koordinator->nip = $request->input('nip');
+        $koordinator->email = $request->input('email');
+        $file       = $request->file('foto');
+        $fileName   = $file->getClientOriginalName();
+        $request->file('foto')->move("foto/adminSekretaris/", $fileName);
+        $koordinator->foto = $fileName;
+        $koordinator->save($request->all());
+        // return redirect('/detail-mahasiswa/{$id}');
+        return back();
     }
 }
 
