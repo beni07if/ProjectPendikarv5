@@ -52,7 +52,7 @@
 
                         @if (Auth::check())
                         {{--  @foreach($mahasiswa as $mhs)  --}}
-                        @foreach($dpns1 as $nPeriodik)
+                        @foreach($dpna as $nPeriodik)
                         <?php
                                             //kalkulasi sholat
                                             $sholats = $nPeriodik->sholat_fardu;
@@ -166,18 +166,30 @@
 
                                 @if (Auth::check())
                                 @foreach($mahasiswa as $mhs)
+                                @foreach($mhs->NilaiPeriodik as $np)
                                 <?php $no++;?>
                                 <tr>
                                     <td>{{ $no }}</td>
                                     <td>{{ $mhs->name }}</td>
                                     <td>Keluarga {{ $mhs->keluarga }}</td>
-                                    <td>x</td>
+                                    <td>{{ $np->kehadiran }},
+                                        {{ $np->ukhuwah_islamiyah }},
+                                        {{ $np->ukhuwah_wathoniyah }},
+                                        {{ $np->fardu_kifayah }},
+                                        {{ $np->hafalan_doa }},
+                                        {{ $np->baca_quran }},
+                                        {{ $np->sholat_fardu }},
+                                        {{ $np->tilawatil_quran }},
+                                        {{ $np->dzikir }},
+                                        {{ $np->buku_harian }}
+                                    </td>
                                     <td>
                                         <a href="{{ route('dpnaDetailKoordinator', $mhs->id) }}" type="button"
                                             class="btn btn-sm btn-info">Detail DPNA</a>
 
                                     </td>
                                 </tr>
+                                @endforeach
                                 @endforeach
                                 @endif
                                 {{-- @endfor --}}

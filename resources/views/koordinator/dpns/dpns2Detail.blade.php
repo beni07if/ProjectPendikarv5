@@ -194,6 +194,7 @@
                             </tbody>
                         </table>
                         <div class="card-header">
+                            <?php $dpns22Hasil= 0; ?>
                             @if (Auth::check())
                             @foreach($mahasiswa as $mhs)
                             @foreach($mhs->NilaiPeriodik as $nPeriodik)
@@ -289,11 +290,12 @@
                                                                                 $ujianKompetensi = ($farduKifayah+$hafalanDoa+$bacaQuran);
                                                                                 $aktivitasHarian = ($shlt+$dzikr+$tilawah);
                                                                                 $dpns22 = ($kehadiran+$tugasTerstruktur+$ujianKompetensi+$aktivitasHarian+$bukuHarian);
+                                                                                $dpns22Hasil += $dpns22;
                                                                                 ?>
                             @endforeach
                             @endforeach
                             @endif
-                            <b>DPNS 2</b> <a class="float-right text-muted">{{ number_format($dpns22,2) }} | {{ number_format($dpns22,2)/8 }}</a>
+                            <b>DPNS 2</b> <a class="float-right text-muted">{{ number_format($dpns22Hasil,2) }} | {{ number_format($dpns22Hasil,2)/8 }}</a>
                         </div>
                     </div>
                     <!-- /.card-body -->

@@ -205,9 +205,9 @@ class DpnsControllerAdmin extends Controller
         $mahasiswa = User::all();
         // $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
         // $nilaiPeriodik = NilaiPeriodik::all();
-        // $dpns1 = NilaiPeriodik::where('pekan_ke', '<', 17)->get();
-        $dpns1 = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->where('pekan_ke', '<', 5)->get();
-        return view('koordinator.dpns.dpnaHome', compact('mahasiswa', 'user', 'dpns1'));
+        $dpna = NilaiPeriodik::where('pekan_ke', '<', 17)->get();
+        // $dpns1 = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->where('pekan_ke', '<', 5)->get();
+        return view('koordinator.dpns.dpnaHome', compact('mahasiswa', 'user', 'dpna'));
         // return view('adminSekretaris.dpns1.index', compact('dpns1', 'mahasiswa', 'user'));
     }
     public function dpnaDetail($id)
