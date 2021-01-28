@@ -45,7 +45,8 @@ class NilaiPeriodikController extends Controller
         $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
         // $nilaiPeriodik = NilaiPeriodik::all();
         // $nilaiPeriodik = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->get();
-        $nilaiPeriodik = NilaiPeriodik::where('user_id', auth()->user()->id)->orderBy('tanggal', 'DESC')->get();
+        // $nilaiPeriodik = NilaiPeriodik::where('user_id', auth()->user()->id)->orderBy('tanggal', 'DESC')->get();
+        $nilaiPeriodik = NilaiPeriodik::where('user_id', auth()->user()->id)->get();
         // $sholat = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->get();
         return view('adminSekretaris.nilaiPeriodik.index', compact('timbul', 'pesan', 'nilaiPeriodik', 'mahasiswa', 'user'));
     }
@@ -228,5 +229,17 @@ class NilaiPeriodikController extends Controller
         $nilaiPeriodik->delete();
 
         return redirect('/nilaiPeriodik')->with('success', 'Nilai Periodik Berhasil Dihapus..');
+    }
+
+    public function tambahNilaiPeriodik()
+    {
+        $user = $this->middleware('auth');
+        // $user = $this->middleware('auth:mahasiswa');
+        // $eloquent = Mahasiswa::where(auth()->user()->keluarga)->get();
+        $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+        // $nilaiPeriodik = NilaiPeriodik::all();
+        // $nilaiPeriodik = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->get();
+        $nilaiPeriodik = NilaiPeriodik::where('user_id', auth()->user()->id)->orderBy('tanggal', 'DESC')->get();
+        return view('adminSekretaris.nilaiPeriodik.tambahNilaiPeriodik', compact('mahasiswa', 'user', 'nilaiPeriodik'));
     }
 }

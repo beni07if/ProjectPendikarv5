@@ -111,8 +111,8 @@ class MahasiswaController extends Controller
         $mahasiswa->created_at = now();
         $mahasiswa->updated_at = now();
         $mahasiswa->save();
-        // return redirect()->route('keluarga');
-        return back()->with('message', 'Mahasiswa berhasil ditambahkan');
+        return redirect()->route('keluarga');
+        // return back()->with('message', 'Mahasiswa berhasil ditambahkan');
     }
 
     /**
@@ -401,5 +401,12 @@ class MahasiswaController extends Controller
         $pengaduan = Pengaduan::where('user_id', $user_id)->get();
         // return view('authMahasiswa.register', compact('mahasiswa'));
         return view('koordinator.pengaduan.pesanPersonalVsMhs', compact('pengaduan', 'mahasiswa', 'user'));
+    }
+
+    public function tambahMahasiswa()
+    {
+        // $user = $this->middleware('auth');
+        $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+        return view('adminSekretaris.mahasiswa.tambahMahasiswa', compact('mahasiswa'));
     }
 }

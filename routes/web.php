@@ -61,6 +61,7 @@ Route::group(['prefix' => 'mahasiswa'], function () {
     Route::post('/login', 'AuthMahasiswa\LoginController@login')->name('mahasiswa.login.submit');
     Route::get('/registerSekretaris', 'RegisterMahasiswaController@register')->name('mahasiswa.register');
     Route::get('/index', 'MahasiswaController@index')->name('mahasiswa.index');
+    Route::get('/tambahMahasiswa', 'MahasiswaController@tambahMahasiswa')->name('tambahMahasiswa');
     Route::get('/edit', 'MahasiswaController@edit')->name('mahasiswa.edit');
     Route::post('/update/{id}', 'MahasiswaController@update')->name('mahasiswa.update');
     Route::get('/create', 'MahasiswaController@create')->name('mahasiswa.create');
@@ -74,6 +75,7 @@ Route::group(['prefix' => 'nilaiPeriodik'], function () {
     Route::get('/apiNP', 'NilaiPeriodikController@apiNilaiPeriodik')->name('apiNilaiPeriodik');
     Route::get('/index', 'NilaiPeriodikController@index')->name('nilaiPeriodik.index');
     Route::get('/create', 'NilaiPeriodikController@create')->name('nilaiPeriodik.create');
+    Route::get('/tambahNilaiPeriodik', 'NilaiPeriodikController@tambahNilaiPeriodik')->name('tambahNilaiPeriodik');
     Route::get('/show', 'NilaiPeriodikController@show')->name('showNilaiPeriodik');
     Route::get('/edit/{id}', 'NilaiPeriodikController@edit')->name('nilaiPeriodik.edit');
     Route::get('/', 'NilaiPeriodikController@index')->name('nilaiPeriodik.home');
