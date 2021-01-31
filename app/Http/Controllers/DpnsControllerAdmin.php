@@ -213,11 +213,11 @@ class DpnsControllerAdmin extends Controller
         $mahasiswa = User::get();
         foreach($mahasiswa as $mhs){
             $id_mhs = $mhs->id;
-            $data = NilaiPeriodik::selectRaw('count(id) as jlh_data','SUM(kehadiran + ukhuwah_islamiyah + ukhuwah_wathoniyah + fardu_kifayah + hafalan_doa + baca_quran + sholat_fardu + tilawatil_quran + dzikir + buku_harian) as total_nilai_akhir')->where('idsiswa', $id_mhs)->first();
+            $data = NilaiPeriodik::selectRaw('count(id) as jlh_data','SUM(kehadiran + ukhuwah_islamiyah + ukhuwah_wathoniyah + fardu_kifayah + hafalan_doa + baca_quran + sholat_fardu + tilawatil_quran + dzikir + buku_harian) as total_nilai_akhir')->where('id_user', $id_mhs)->first();
             $rata_rata = $data->total_nilai_akhir / $data->jlh_data;
         }
         return $rata_rata;
-        // // return view('koordinator.dpns.dpnaWeik');
+        // return view('koordinator.dpns.dpnaWeik');
     }
     public function dpnaDetail($id)
     {
