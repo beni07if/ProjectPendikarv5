@@ -200,24 +200,24 @@ class DpnsControllerAdmin extends Controller
 
     public function dpnaHome()
     {
-        // $user = $this->middleware('auth:admin');
-        // // $eloquent = Mahasiswa::where(auth()->user()->keluarga)->get();
-        // $mahasiswa = User::all();
-        // // $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
-        // // $nilaiPeriodik = NilaiPeriodik::all();
-        // $dpna = NilaiPeriodik::where('pekan_ke', '<', 17)->get();
-        // // $dpns1 = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->where('pekan_ke', '<', 5)->get();
-        // return view('koordinator.dpns.dpnaHome', compact('mahasiswa', 'user', 'dpna'));
-        // // return view('adminSekretaris.dpns1.index', compact('dpns1', 'mahasiswa', 'user'));
+        $user = $this->middleware('auth:admin');
+        // $eloquent = Mahasiswa::where(auth()->user()->keluarga)->get();
+        $mahasiswa = User::all();
+        // $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+        // $nilaiPeriodik = NilaiPeriodik::all();
+        $dpna = NilaiPeriodik::where('pekan_ke', '<', 17)->get();
+        // $dpns1 = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->where('pekan_ke', '<', 5)->get();
+        return view('koordinator.dpns.dpnaHome', compact('mahasiswa', 'user', 'dpna'));
+        // return view('adminSekretaris.dpns1.index', compact('dpns1', 'mahasiswa', 'user'));
 
-        $mahasiswa = User::get();
-        foreach($mahasiswa as $mhs){
-            $id_mhs = $mhs->id;
-            $data = NilaiPeriodik::selectRaw('count(id) as jlh_data','SUM(kehadiran + ukhuwah_islamiyah + ukhuwah_wathoniyah + fardu_kifayah + hafalan_doa + baca_quran + sholat_fardu + tilawatil_quran + dzikir + buku_harian) as total_nilai_akhir')->where('idsiswa', $id_mhs)->first();
-            $rata_rata = $data->total_nilai_akhir / $data->jlh_data;
-        }
-        return $rata_rata;
-        // return view('koordinator.dpns.dpnaWeik');
+        // $mahasiswa = User::get();
+        // foreach($mahasiswa as $mhs){
+        //     $id_mhs = $mhs->id;
+        //     $data = NilaiPeriodik::selectRaw('count(id) as jlh_data','SUM(kehadiran + ukhuwah_islamiyah + ukhuwah_wathoniyah + fardu_kifayah + hafalan_doa + baca_quran + sholat_fardu + tilawatil_quran + dzikir + buku_harian) as total_nilai_akhir')->where('idsiswa', $id_mhs)->first();
+        //     $rata_rata = $data->total_nilai_akhir / $data->jlh_data;
+        // }
+        // return $rata_rata;
+        // // return view('koordinator.dpns.dpnaWeik');
     }
     public function dpnaDetail($id)
     {
