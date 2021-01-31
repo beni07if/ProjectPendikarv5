@@ -37,6 +37,7 @@
         <div class="col-md-4">
 
           <!-- Profile Image -->
+
           <div class="card card-primary card-outline">
             <div class="card-body box-profile">
               <div class="text-center">
@@ -69,7 +70,7 @@
                     <b>Angkatan</b> <a class="float-right text-muted">{{ Auth::user()->periode }}</a>
                 </li>
               </ul>
-
+                <a href="{{ route('indexEditMhs') }}" class="btn btn-primary btn-block"><b>Edit</b></a>
               {{--  <b href="#" class="btn btn-primary btn-block"><b>Follow</b></b>  --}}
             </div>
             <!-- /.card-body -->
@@ -89,11 +90,11 @@
                         {{ session('error') }}
                     </div>
                 @endif
-                @if(session()->get('message'))
+                {{--  @if(session()->get('message'))
                         <div class="alert alert-succest" role="alert">
                             <strong>Mantap</strong>{{ session()->get('message')}}
                         </div>
-                    @endif
+                    @endif  --}}
             </div><!-- /.card-header -->
             <div class="card-body">
                 <form method="POST" action="{{ route('changePasswordSubmit') }}">
@@ -167,8 +168,8 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Ubah') }}
+                            <button type="submit" class="btn btn-primary swalPasswordSuccess">
+                                {{ __('Simpan') }}
                             </button>
 
                             {{--  @if (Route::has('password.request'))

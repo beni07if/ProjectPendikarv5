@@ -202,6 +202,18 @@
         title: 'Data mahasiswa berhasil diubah..'
         })
         });
+        $('.swalDefaultEditKoordinator').click(function() {
+        Toast.fire({
+        type: 'success',
+        title: 'Data berhasil diubah..'
+        })
+        });
+        $('.swalPasswordSuccess').click(function() {
+        Toast.fire({
+        type: 'success',
+        title: 'Password berhasil diubah..'
+        })
+        });
 
 
         $('.swalDefaultInfo').click(function() {

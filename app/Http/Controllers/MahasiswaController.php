@@ -40,6 +40,15 @@ class MahasiswaController extends Controller
         // $mahasiswa = User::all();
         return view('adminSekretaris.mahasiswa.index', compact('mahasiswa', 'user'));
     }
+    public function indexEditMhs()
+    {
+        $user = $this->middleware('auth');
+        // $user = $this->middleware('auth:mahasiswa');
+        // $mahasiswa = Mahasiswa::all();
+        $mahasiswa = User::where('id', auth()->user()->id)->get();
+        // $mahasiswa = User::all();
+        return view('adminSekretaris.mahasiswa.indexEditMhs', compact('mahasiswa', 'user'));
+    }
     public function indexTutor()
     {
         $user = $this->middleware('auth');
@@ -175,6 +184,35 @@ class MahasiswaController extends Controller
         $mahasiswa->save($request->all());
         return redirect('/keluarga')->with('message', 'Data Mahasiswa Berhasil Diubah..');
         // return back()->with('message', 'Mahasiswa berhasil Diubah');
+    }
+
+    public function updateDataMhs(Request $request, $id)
+    {
+        $this->validate($request, [
+            'foto' => 'required|image|mimes:jpg,png,jpeg'
+        ]);
+
+        $mahasiswa = User::findOrFail($id);
+        $mahasiswa->name = $request->input('name');
+        $mahasiswa->nim = $request->input('nim');
+        $mahasiswa->email = $request->input('email');
+        $mahasiswa->fakultas = $request->input('fakultas');
+        $mahasiswa->prodi = $request->input('prodi');
+        $mahasiswa->no_hp = $request->input('no_hp');
+        $mahasiswa->keluarga = $request->input('keluarga');
+
+        $file       = $request->file('foto');
+        $fileName   = $file->getClientOriginalName();
+        $request->file('foto')->move("foto/adminSekretaris/", $fileName);
+
+        $mahasiswa->foto = $fileName;
+        // $mahasiswa->foto = $request->file('foto');
+        $mahasiswa->periode = $request->input('periode');
+        $mahasiswa->role = $request->input('role');
+
+        $mahasiswa->save($request->all());
+        // return redirect('/')->with('message', 'Data Mahasiswa Berhasil Diubah..');
+        return back()->with('message', 'Mahasiswa berhasil Diubah');
     }
 
     /**

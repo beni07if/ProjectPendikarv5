@@ -12,11 +12,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    // return view('welcome');
-    return view('login5');
-})->name('welcome');
+Route::get('/', 'MahasiswaController@index')->name('home');
+// Route::get('/', function () {
+//     // return view('welcome');
+//     return view('login5');
+// })->name('welcome');
 
 Route::get('/login..', function () {
     // return view('welcome');
@@ -34,7 +34,6 @@ Route::get('/login4', function () {
     // return view('welcome');
     return view('login4');
 })->name('login4');
-
 
 Auth::routes();
 
@@ -57,13 +56,15 @@ Route::group(['prefix' => 'sekretaris'], function () {
 });
 
 Route::group(['prefix' => 'mahasiswa'], function () {
-    Route::get('/login', 'AuthMahasiswa\LoginController@showLoginForm')->name('mahasiswa.login');
-    Route::post('/login', 'AuthMahasiswa\LoginController@login')->name('mahasiswa.login.submit');
+    // Route::get('/login', 'AuthMahasiswa\LoginController@showLoginForm')->name('mahasiswa.login');
+    // Route::post('/login', 'AuthMahasiswa\LoginController@login')->name('mahasiswa.login.submit');
     Route::get('/registerSekretaris', 'RegisterMahasiswaController@register')->name('mahasiswa.register');
     Route::get('/index', 'MahasiswaController@index')->name('mahasiswa.index');
+    Route::get('/indexEditMhs', 'MahasiswaController@indexEditMhs')->name('indexEditMhs');
     Route::get('/tambahMahasiswa', 'MahasiswaController@tambahMahasiswa')->name('tambahMahasiswa');
     Route::get('/edit', 'MahasiswaController@edit')->name('mahasiswa.edit');
     Route::post('/update/{id}', 'MahasiswaController@update')->name('mahasiswa.update');
+    Route::post('/updateDataMhs/{id}', 'MahasiswaController@updateDataMhs')->name('updateDataMhs');
     Route::get('/create', 'MahasiswaController@create')->name('mahasiswa.create');
     Route::post('/store', 'MahasiswaController@store')->name('mahasiswa.store');
     Route::post('/registerStore', 'RegisterMahasiswaController@store')->name('register.mahasiswa.store');

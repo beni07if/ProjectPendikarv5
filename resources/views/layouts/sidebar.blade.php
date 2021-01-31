@@ -31,13 +31,13 @@
                with font-awesome or any other icon font library -->
             <li class="nav-item">
                 <a href="{{ route('nilaiPeriodik.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-book"></i>
                     <p>Nilai Periodik</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('dpns11') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon far fa-address-card"></i>
                     <p>DPNS</p>
                 </a>
             </li>
@@ -83,26 +83,26 @@
             </li>  --}}
             <li class="nav-item">
                 <a href="{{ route('dpnaa') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-address-card"></i>
                     <p>DPNA</p>
                 </a>
             </li>
             <li class="nav-item">
                 {{--  <a href="{{ route('daftarPengaduanMhs') }}" class="nav-link">  --}}
                 <a href="{{ route('daftarPengaduanMhs') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-bullhorn"></i>
                     <p>Pengaduan</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('keluarga') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-chalkboard-teacher"></i>
                     <p>Keluarga</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="bantuan" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-bold"></i>
                     <p>Bantuan</p>
                 </a>
             </li>
@@ -112,7 +112,7 @@
             <a href="#" class="nav-link" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-              <i class="nav-icon far fa-circle text-info"></i>
+              <i class="nav-icon fas fa-sign-out-alt text-info"></i>
               <p>Logout</p>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

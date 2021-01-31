@@ -31,7 +31,7 @@
                with font-awesome or any other icon font library -->
             <li class="nav-item">
                 <a href="{{ route('nilaiPeriodikAdminIndex') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-book"></i>
                     <p>Nilai Periodik</p>
                 </a>
             </li>
@@ -49,7 +49,7 @@
             </li>  --}}
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon far fa-address-card"></i>
                     <p>DPNS
                     <i class="right fas fa-angle-left"></i>
                     </p>
@@ -57,19 +57,19 @@
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('dpns1HomeKoordinator') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="far fa-file-alt nav-icon"></i>
                     <p>DPNS 1</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('dpns2HomeKoordinator') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="far fa-file-alt nav-icon"></i>
                     <p>DPNS 2</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('dpns3HomeKoordinator') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="far fa-file-alt nav-icon"></i>
                     <p>DPNS 3</p>
                     </a>
                 </li>
@@ -83,25 +83,25 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('dpnaHomeKoordinator') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-address-card"></i>
                     <p>DPNA</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('pengaduanListKoordinator') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-bullhorn"></i>
                     <p>Pengaduan</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('listKeluarga') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-chalkboard-teacher"></i>
                     <p>Keluarga</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('bantuan') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-bold"></i>
                     <p>Bantuan</p>
                 </a>
             </li>
@@ -111,7 +111,7 @@
             <a href="#" class="nav-link" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-              <i class="nav-icon far fa-circle text-info"></i>
+              <i class="nav-icon fas fa-sign-out-alt text-info"></i>
               <p>Logout</p>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

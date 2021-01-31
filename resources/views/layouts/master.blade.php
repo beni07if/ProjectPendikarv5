@@ -204,7 +204,7 @@
         $('.swalDefaultEditMahasiswa').click(function() {
           Toast.fire({
             type: 'success',
-            title: 'Mahasiswa berhasil diubah..'
+            title: 'Data Mahasiswa berhasil diubah..'
           })
         });
         $('.swalDefaultDeleteMahasiswa').click(function() {
@@ -217,6 +217,12 @@
           Toast.fire({
             type: 'success',
             title: 'Data berhasil dihapus..'
+          })
+        });
+        $('.swalPasswordSuccess').click(function() {
+          Toast.fire({
+            type: 'success',
+            title: 'Password berhasil diubah..'
           })
         });
 

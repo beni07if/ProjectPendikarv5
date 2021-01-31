@@ -74,14 +74,14 @@
                         {{ session('error') }}
                     </div>
                 @endif
-                @if(session()->get('message'))
+                {{--  @if(session()->get('message'))
                         <div class="alert alert-succest" role="alert">
                             <strong>Mantap</strong>{{ session()->get('message')}}
                         </div>
-                    @endif
+                    @endif  --}}
             </div><!-- /.card-header -->
             <div class="card-body">
-                <form method="POST" action="{{ route('changePasswordSubmit') }}">
+                <form method="POST" action="{{ route('changePasswordSubmitAdmin') }}">
                     @csrf
 
                     <div class="form-group row">
@@ -138,7 +138,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary swalPasswordSuccess">
                                 {{ __('Simpan') }}
                             </button>
 
