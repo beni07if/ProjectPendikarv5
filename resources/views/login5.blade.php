@@ -122,7 +122,6 @@
                     <label for="password-confirm">Konfirmasi Password</label>
 
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-
                 </div>
                   {{--  <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">

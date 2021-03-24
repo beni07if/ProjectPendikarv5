@@ -1,0 +1,299 @@
+@extends('layouts.masterKoordinator')
+
+@section('navbarTitle2')
+<a href="#" class="nav-link">DPNA</a>
+@endsection
+
+@section('breadcrumb')
+<a href="#" class="nav-link">Sistem Penilaian Pendikar / DPNA</a>
+@endsection
+
+@section('content')
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>DPNA</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ route('mahasiswa.home') }}">Home</a></li>
+                        <li class="breadcrumb-item active">DPNA</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        {{--  <a href="{{ route('tambahMahasiswa') }}" class="btn btn-info">Tambah Anggota Keluarga</a>
+                        --}}
+                        {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal"
+                        data-target=".bd-example-modal-sm">Tambah Nilai Periodik</a> --}}
+                        {{--  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
+
+                    </div>
+                    @if(session()->get('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div><br />
+                    @endif
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive">
+
+                        @if (Auth::check())
+                        {{--  @foreach($mahasiswa as $mhs)  --}}
+                        @foreach($dpna as $nPeriodik)
+                        <?php
+                                            //kalkulasi sholat
+                                            $sholats = $nPeriodik->sholat_fardu;
+                                                if (($sholats) > 32){
+                                                    $sholat = 100;
+                                                } elseif (($sholats) > 28){
+                                                    $sholat = 90;
+                                                }elseif (($sholats) > 25){
+                                                    $sholat = 80;
+                                                }elseif (($sholats) > 21){
+                                                    $sholat = 70;
+                                                }elseif (($sholats) > 18){
+                                                    $sholat = 60;
+                                                }elseif (($sholats) > 14){
+                                                    $sholat = 50;
+                                                }elseif (($sholats) > 11){
+                                                    $sholat = 40;
+                                                }elseif (($sholats) > 7){
+                                                    $sholat = 30;
+                                                }elseif (($sholats) > 4){
+                                                    $sholat = 20;
+                                                }elseif (($sholats) > 0){
+                                                    $sholat = 10;
+                                                }else{
+                                                    $sholat = 0;
+                                                }
+
+                                            // end kalkulasi sholat
+
+                                            //kalkulasi dzikir
+                                            $dzikirs = $nPeriodik->dzikir;
+                                                if (($dzikirs) > 105){
+                                                    $dzikir = 100;
+                                                }elseif (($dzikirs) > 83){
+                                                    $dzikir = 80;
+                                                }elseif (($dzikirs) > 62){
+                                                    $dzikir = 60;
+                                                }elseif (($dzikirs) > 41){
+                                                    $dzikir = 40;
+                                                }elseif (($dzikirs) > 20){
+                                                    $dzikir = 20;
+                                                }elseif (($dzikirs) > 0){
+                                                    $dzikir = 10;
+                                                }else{
+                                                    $dzikir = 0;
+                                                }
+
+                                            //end kalkulasi dzikir
+
+                                            //kalkulasi tilawah
+                                            $saritilawahs = $nPeriodik->tilawatil_quran;
+                                                if (($saritilawahs) > 45){
+                                                    $saritilawah = 100;
+                                                }elseif (($saritilawahs) > 40){
+                                                    $saritilawah = 90;
+                                                }elseif (($saritilawahs) > 35){
+                                                    $saritilawah = 80;
+                                                }elseif (($saritilawahs) > 30){
+                                                    $saritilawah = 70;
+                                                }elseif (($saritilawahs) > 25){
+                                                    $saritilawah = 60;
+                                                }elseif (($saritilawahs) > 20){
+                                                    $saritilawah = 50;
+                                                }elseif (($saritilawahs) > 15){
+                                                    $saritilawah = 40;
+                                                }elseif (($saritilawahs) > 5){
+                                                    $saritilawah = 20;
+                                                }elseif (($saritilawahs) > 0){
+                                                    $saritilawah = 10;
+                                                }else{
+                                                    $saritilawah = 0;
+                                                }
+                                            //end kalkulasi tilawah
+                                            $kehadiran = (($nPeriodik->kehadiran)*10/100);
+
+                                            $ukhuwahIslamiyah = (($nPeriodik->ukhuwah_islamiyah)*10/100);
+                                            $ukhuwahWathoniyah = (($nPeriodik->ukhuwah_wathoniyah)*10/100);
+
+                                            $farduKifayah = (($nPeriodik->fardu_kifayah)*10/100);
+                                            $hafalanDoa = (($nPeriodik->hafalan_doa)*10/100);
+                                            $bacaQuran = (($nPeriodik->baca_quran)*10/100);
+
+                                            $shlt = ($sholat*10/100);
+                                            $tilawah = ($saritilawah*10/100);
+                                            $dzikr = ($dzikir*10/100);
+
+                                            $bukuHarian = (($nPeriodik->buku_harian)*10/100);
+
+                                            $tugasTerstruktur = ($ukhuwahIslamiyah+$ukhuwahWathoniyah);
+                                            $ujianKompetensi = ($farduKifayah+$hafalanDoa+$bacaQuran);
+                                            $aktivitasHarian = ($shlt+$dzikr+$tilawah);
+                                            $dpnaaa = ($kehadiran+$tugasTerstruktur+$ujianKompetensi+$aktivitasHarian+$bukuHarian);
+                                            ?>
+                        @endforeach
+                        {{--  @endforeach  --}}
+                        @endif
+                        {{--  <b>DPNA</b> <a class="float-right text-muted">{{ $dpna }}</a>  --}}
+
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Keluarga</th>
+                                    <th>DPNA</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 0;?>
+
+                                <?php $dpnaHasil = 0; ?>
+                                @if (Auth::check())
+                                @foreach($mahasiswa as $mhs)
+                                @foreach($mhs->NilaiPeriodik as $np)
+                                <?php $no++;?>
+                                <?php
+                                //kalkulasi sholat
+                                $sholats = $nPeriodik->sholat_fardu;
+                                    if (($sholats) > 32){
+                                        $sholat = 100;
+                                    } elseif (($sholats) > 28){
+                                        $sholat = 90;
+                                    }elseif (($sholats) > 25){
+                                        $sholat = 80;
+                                    }elseif (($sholats) > 21){
+                                        $sholat = 70;
+                                    }elseif (($sholats) > 18){
+                                        $sholat = 60;
+                                    }elseif (($sholats) > 14){
+                                        $sholat = 50;
+                                    }elseif (($sholats) > 11){
+                                        $sholat = 40;
+                                    }elseif (($sholats) > 7){
+                                        $sholat = 30;
+                                    }elseif (($sholats) > 4){
+                                        $sholat = 20;
+                                    }elseif (($sholats) > 0){
+                                        $sholat = 10;
+                                    }else{
+                                        $sholat = 0;
+                                    }
+
+                                // end kalkulasi sholat
+
+                                //kalkulasi dzikir
+                                $dzikirs = $nPeriodik->dzikir;
+                                    if (($dzikirs) > 105){
+                                        $dzikir = 100;
+                                    }elseif (($dzikirs) > 83){
+                                        $dzikir = 80;
+                                    }elseif (($dzikirs) > 62){
+                                        $dzikir = 60;
+                                    }elseif (($dzikirs) > 41){
+                                        $dzikir = 40;
+                                    }elseif (($dzikirs) > 20){
+                                        $dzikir = 20;
+                                    }elseif (($dzikirs) > 0){
+                                        $dzikir = 10;
+                                    }else{
+                                        $dzikir = 0;
+                                    }
+
+                                //end kalkulasi dzikir
+
+                                //kalkulasi tilawah
+                                $saritilawahs = $nPeriodik->tilawatil_quran;
+                                    if (($saritilawahs) > 45){
+                                        $saritilawah = 100;
+                                    }elseif (($saritilawahs) > 40){
+                                        $saritilawah = 90;
+                                    }elseif (($saritilawahs) > 35){
+                                        $saritilawah = 80;
+                                    }elseif (($saritilawahs) > 30){
+                                        $saritilawah = 70;
+                                    }elseif (($saritilawahs) > 25){
+                                        $saritilawah = 60;
+                                    }elseif (($saritilawahs) > 20){
+                                        $saritilawah = 50;
+                                    }elseif (($saritilawahs) > 15){
+                                        $saritilawah = 40;
+                                    }elseif (($saritilawahs) > 5){
+                                        $saritilawah = 20;
+                                    }elseif (($saritilawahs) > 0){
+                                        $saritilawah = 10;
+                                    }else{
+                                        $saritilawah = 0;
+                                    }
+                                //end kalkulasi tilawah
+                                $kehadiran = (($nPeriodik->kehadiran)*10/100);
+
+                                $ukhuwahIslamiyah = (($nPeriodik->ukhuwah_islamiyah)*10/100);
+                                $ukhuwahWathoniyah = (($nPeriodik->ukhuwah_wathoniyah)*10/100);
+
+                                $farduKifayah = (($nPeriodik->fardu_kifayah)*10/100);
+                                $hafalanDoa = (($nPeriodik->hafalan_doa)*10/100);
+                                $bacaQuran = (($nPeriodik->baca_quran)*10/100);
+
+                                $shlt = ($sholat*10/100);
+                                $tilawah = ($saritilawah*10/100);
+                                $dzikr = ($dzikir*10/100);
+
+                                $bukuHarian = (($nPeriodik->buku_harian)*10/100);
+
+                                $tugasTerstruktur = ($ukhuwahIslamiyah+$ukhuwahWathoniyah);
+                                $ujianKompetensi = ($farduKifayah+$hafalanDoa+$bacaQuran);
+                                $aktivitasHarian = ($shlt+$dzikr+$tilawah);
+                                $dpnaa = ($kehadiran+$tugasTerstruktur+$ujianKompetensi+$aktivitasHarian+$bukuHarian);
+                                $dpnaHasil += $dpnaa;
+                                ?>
+                                <tr>
+                                    <td>{{ $no }}</td>
+                                    <td>{{ $mhs->name }}</td>
+                                    <td>Keluarga {{ $mhs->keluarga }}</td>
+                                    <td>
+                                        {{ ($dpnaHasil)}}
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('dpnaDetailKoordinator', $mhs->id) }}" type="button"
+                                            class="btn btn-sm btn-info">Detail DPNA</a>
+
+                                    </td>
+                                </tr>
+                                @endforeach
+                                @endforeach
+                                @endif
+                                {{-- @endfor --}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+@endsection
