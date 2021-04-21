@@ -110,6 +110,7 @@ Route::get('dpns2-show/{id}', 'MahasiswaController@dpns2Show')->name('dpns2Show'
 Route::get('dpns33', 'MahasiswaController@dpns3')->name('dpns33');
 Route::get('dpns3-show/{id}', 'MahasiswaController@dpns3Show')->name('dpns3Show');
 Route::get('bantuan', 'MahasiswaController@bantuan')->name('bantuan');
+Route::get('bantuanKoordinator', 'AdminController@bantuanKoordinator')->name('bantuanKoordinator');
 
 Route::group(['prefix' => 'dpns2'], function () {
     Route::get('/apiNP', 'DPNS2Controller@apiDpns2')->name('apiDpns2');

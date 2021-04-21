@@ -68,13 +68,13 @@
 
                                 <tr>
                                     <td> {{ $nilai->name}}</td>
-                                    <td> {{ $nilai->keluarga }}</td>
+                                    <td> Keluarga {{ $nilai->keluarga }}</td>
                                     <td>
                                         {{ ($nilai->dpna_hasil)}}
                                     </td>
                                     <td>
                                         <a href="{{ route('dpnaDetailKoordinator', $nilai->user_id) }}" type="button"
-                                            class="btn btn-sm btn-info">Detail DPNA</a>
+                                            class="btn btn-sm btn-info fas fa-eye">Detail DPNA</a>
 
                                     </td>
                                 </tr>

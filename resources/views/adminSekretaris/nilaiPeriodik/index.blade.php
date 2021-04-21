@@ -170,7 +170,7 @@
                                     <td>{{ number_format($aktivitasHarian,2) }}</td>
                                     <td>{{ $bukuHarian }}</td>
                                     <td>
-                                        <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-warning btn-sm fas fa-edit">{{$pesan}}</a>
+                                        <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-info btn-sm fas fa-eye">{{$pesan}}</a>
                                         {{--  <a href="{{ route('nilaiPeriodik.show', $mhs->id) }}" type="button" class="btn btn-info btn-sm fas fa-folder">Detail/dakperlu</a>  --}}
                                         {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editNilaiPeriodik', $nPeriodik->id, $nPeriodik->mahasiswa_id) }}">edit</p>  --}}
                                         {{--  <p class="btn btn-danger btn-xs">delete</p>  --}}

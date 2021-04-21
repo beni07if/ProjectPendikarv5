@@ -158,7 +158,7 @@
                                     {{--  <td>{{ number_format($dpns33,2) }}</td> --}}
                                     <td>
                                         <a href="{{ route('dpns3DetailKoordinator', $mhs->id) }}" type="button"
-                                            class="btn btn-sm btn-info">Detail DPNS 3</a>
+                                            class="btn btn-sm btn-info fas fa-eye">Detail DPNS 3</a>
 
                                     </td>
                                 </tr>

@@ -48,6 +48,24 @@ class PengaduanControllerAdmin extends Controller
         return view('koordinator.pengaduan.pesanIndexVsKoor', compact('pengaduan', 'mahasiswa'));
     }
 
+    public function indexRevisi(){
+        $pengaduan = Pengaduan::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+        $user = $this->middleware('auth');
+        $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+
+        if ($mahasiswa->Pengaduan->pesan == 'dibalas') {
+            $ketBalas = '';
+            $pesan = 'Pesan sudah dibalas..';
+        } else {
+            $ketBalas = 'hidden';
+            $pesan = 'Pesan belum dibalas..';
+        }
+        // $user = $this->middleware('auth:mahasiswa');
+        // $eloquent = Mahasiswa::where(auth()->user()->keluarga)->get();
+        // $pengaduan = Pengaduan::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+        return view('koordinator.pengaduan.pesanIndexVsKoor', compact('balas', 'pesan', 'nilaiPeriodik', 'mahasiswa', 'user'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

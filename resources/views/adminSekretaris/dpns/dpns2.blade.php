@@ -204,7 +204,7 @@
                                                 <td>{{ $dpns20 }}</td>
                                                 {{--  <td>{{ $nPeriodik->tanggal }}</td> --}}
                                                 <td>
-                                                    <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-sm btn-info btn-sm fas fa-folder">Detail</a>
+                                                    <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-sm btn-info btn-sm fas fa-eye">Detail</a>
                                                     {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editdpns1', $nPeriodik->id) }}">edit
                                                     </p> --}}
                                                     {{--  <a href="{{ route('dpns1.edit', $nPeriodik->id)}}"

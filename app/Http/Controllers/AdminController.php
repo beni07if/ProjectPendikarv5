@@ -466,5 +466,13 @@ class AdminController extends Controller
         // return redirect('/detail-mahasiswa/{$id}');
         return back();
     }
+
+    public function bantuanKoordinator()
+    {
+        // $mahasiswa = User::all();
+        // $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+        // return view('authMahasiswa.register', compact('mahasiswa'));
+        return view('koordinator.bantuan.index');
+    }
 }
 

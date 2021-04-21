@@ -72,6 +72,7 @@
                                     <td>{{ $pesan->balasan }} <br><p class="text-muted">( {{ $pesan->tanggal_balas }} ({{ $pesan->jam_balas }}) )</td>
                                     {{--  <td>{{ $pesan->tanggal }}</td>
                                     <td>{{ $pesan->jam }}</td>  --}}
+                                    <td></td>
                                     {{--  <td>{{ $pesan->no_hp }}</td>  --}}
                                     <td>
                                         <a href="{{ route('pesanVsKoor', $pesan->id) }}" class="btn btn-sm btn-info">Balas</a>

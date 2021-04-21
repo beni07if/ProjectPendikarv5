@@ -100,7 +100,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('bantuan') }}" class="nav-link">
+                <a href="{{ route('bantuanKoordinator') }}" class="nav-link">
                     <i class="nav-icon fas fa-bold"></i>
                     <p>Bantuan</p>
                 </a>

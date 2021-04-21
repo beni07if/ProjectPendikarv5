@@ -81,7 +81,7 @@
                                     <td>{{ $mhs->role }}</td>
                                     <td>{{ $mhs->no_hp }}</td>
                                     <td>
-                                        <a href="{{ route('editMahasiswa', $mhs->id) }}" type="button" class="btn btn-info btn-sm  fas fa-edit" >{{$pesan}}</a>
+                                        <a href="{{ route('editMahasiswa', $mhs->id) }}" type="button" class="btn btn-warning btn-sm  fas fa-edit" >{{$pesan}}</a>
                                         {{--  <p class="btn btn-info btn-xs"><a href="{{ route('showNilaiPeriodik', $mhs->id) }}">view</p>
                                         <p class="btn btn-warning btn-xs"><a href="{{ route('editMahasiswa', $mhs->id) }}">edit</p>  --}}
                                         {{--  <p class="btn btn-danger btn-xs">delete</p>  --}}

@@ -69,7 +69,7 @@
                                 <tr>
                                     <td>{{ $no }}</td>
                                     <td>{{ $mhs->name }}</td>
-                                    <td>{{ $mhs->keluarga }}</td>
+                                    <td>Keluarga {{ $mhs->keluarga }}</td>
                                     <td>
                                         <a href="{{ route('daftarMhsVsKeluarga', $mhs->keluarga) }}" class="btn btn-info">Anggota Keluarga</a>
                                         {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editMahasiswa', $mhs->id) }}">edit</p>  --}}

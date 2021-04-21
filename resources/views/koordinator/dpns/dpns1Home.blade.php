@@ -156,7 +156,7 @@
                                     <td>{{ $mhs->keluarga }}</td>
                                     {{--  <td>{{ number_format($dpns11,2) }}</td>  --}}
                                     <td>
-                                        <a href="{{ route('dpns1DetailKoordinator', $mhs->id) }}" type="button" class="btn btn-sm btn-info">Detail DPNS 1</a>
+                                        <a href="{{ route('dpns1DetailKoordinator', $mhs->id) }}" type="button" class="btn btn-sm btn-info fas fa-eye">Detail DPNS 1</a>
 
                                     </td>
                                 </tr>

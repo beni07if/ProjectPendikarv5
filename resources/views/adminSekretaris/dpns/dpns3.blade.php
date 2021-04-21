@@ -203,7 +203,7 @@
                         {{--  <td>{{ $nPeriodik->tanggal }}</td>  --}}
                         <td>
                           <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-sm
-                          btn-info fas fa-folder">Detail</a>
+                          btn-info fas fa-eye">Detail</a>
                           {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editdpns1', $nPeriodik->id) }}">edit
                           </p> --}}
                           {{--  <a href="{{ route('dpns1.edit', $nPeriodik->id)}}" type="button" class="btn btn-sm

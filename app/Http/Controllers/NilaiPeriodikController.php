@@ -31,13 +31,13 @@ class NilaiPeriodikController extends Controller
     {
         if (Auth::user()->role == 'sekretaris') {
             $timbul = '';
-            $pesan = 'Edit';
+            $pesan = 'Detail';
         } elseif (Auth::user()->role == 'tutor') {
             $timbul = '';
-            $pesan = 'Edit';
+            $pesan = 'Detail';
         } else {
             $timbul = 'hidden';
-            $pesan = 'Lihat';
+            $pesan = 'Detail';
         }
         $user = $this->middleware('auth');
         // $user = $this->middleware('auth:mahasiswa');
