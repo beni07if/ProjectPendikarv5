@@ -184,7 +184,7 @@
                     </div>
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary swalDefaultEditMahasiswa">
+                            <button type="submit" class="btn btn-success swalDefaultEditMahasiswa">
                                 {{ __('Simpan') }}
                             </button>
 
@@ -296,7 +296,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary swalPasswordSuccess">
+                            <button type="submit" class="btn btn-success swalPasswordSuccess">
                                 {{ __('Simpan') }}
                             </button>
 

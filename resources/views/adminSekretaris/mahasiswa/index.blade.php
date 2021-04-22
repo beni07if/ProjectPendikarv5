@@ -70,7 +70,7 @@
                     <b>Angkatan</b> <a class="float-right text-muted">{{ Auth::user()->periode }}</a>
                 </li>
               </ul>
-                <a href="{{ route('indexEditMhs') }}" class="btn btn-success btn-block"><b>Edit</b></a>
+                <a href="{{ route('indexEditMhs') }}" class="btn btn-warning btn-block"><b>Edit</b></a>
               {{--  <b href="#" class="btn btn-primary btn-block"><b>Follow</b></b>  --}}
             </div>
             <!-- /.card-body -->

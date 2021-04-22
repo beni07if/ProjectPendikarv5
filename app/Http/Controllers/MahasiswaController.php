@@ -388,12 +388,16 @@ class MahasiswaController extends Controller
         if (Auth::user()->role == 'sekretaris') {
             $timbul = '';
             $pesan = 'Edit';
+            $icon = 'fas fa-edit';
+            $buttonViewEdit = 'btn btn-warning btn-sm';
         } else {
             $timbul = 'hidden';
             $pesan = 'Lihat';
+            $icon = 'fa fa-eye';
+            $buttonViewEdit = 'btn btn-info btn-sm';
         }
         // return view('authMahasiswa.register', compact('mahasiswa'));
-        return view('adminSekretaris.mahasiswa.daftarMahasiswa', compact('mahasiswa', 'timbul', 'pesan'));
+        return view('adminSekretaris.mahasiswa.daftarMahasiswa', compact('mahasiswa', 'buttonViewEdit', 'icon', 'timbul', 'pesan'));
     }
 
     public function EditMahasiswa($id)

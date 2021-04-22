@@ -178,7 +178,7 @@
                                             @csrf
                                             @method('DELETE')
                                              {{--  <button class="btn btn-danger btn-sm fas fa-trash"  type="submit">Delete</button>  --}}
-                                             <button type="submit" class="btn btn-danger btn-sm swalDefaultDelete" {{$timbul}}>
+                                             <button type="submit" class="btn btn-danger fas fa-trash btn-sm swalDefaultDelete" {{$timbul}}>
                                              {{--  <button type="button" class="btn btn-danger btn-sm swalDefaultSuccess" data-toggle="modal" data-target="#modal-default">  --}}
                                                  Hapus
                                             </button>
