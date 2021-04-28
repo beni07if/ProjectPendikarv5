@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sistem Penilaian | Pendikar v.1</title>
+    <title>Sistem Informasi Penilaian Pendikar UNTAN
+        @yield('dpnaHeaderExport')
+    </title>
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -13,14 +16,21 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+<!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+
 
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+    {{--  <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">  --}}
     <!-- daterange picker -->
+    {{--  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">  --}}
 
     {{--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  --}}
 {{--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
@@ -45,6 +55,12 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">  --}}
+    <style>
+        #gambarPengaduan {
+            width : 50%;
+
+        }
+    </style>
 
 </head>
 
@@ -106,9 +122,14 @@
     <!-- DataTables -->
     <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+    <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+
     <!-- page script -->
 
-    {{--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
@@ -122,11 +143,21 @@
   $(document).ready(function () {
       $('#example1').DataTable({
           dom: 'Bfrtip',
-          buttons: ['excel', 'pdf']
-          //buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+          buttons: ['excel', 'pdf', ]
+         // buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
       });
   });
-</script>  --}}
+</script>
+<script type="text/javascript">
+  $(document).ready(function () {
+      $('#example').DataTable({
+          //dom: 'Bfrtip',
+          //buttons: ['excel', 'pdf', ]
+         // buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+      });
+  });
+</script>
+@yield('sriptExportExcel')
 
     {{--  <script>
         $(function () {

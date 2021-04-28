@@ -55,7 +55,7 @@
                 </li>
               </ul>
 
-              <a href="{{ route('editDataKoordinator')}}" class="btn btn-success btn-block"><b>Edit</b></a>
+              <a href="{{ route('editDataKoordinator')}}" class="btn btn-outline-warning btn-sm"><b>Edit</b></a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -138,8 +138,8 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-success swalPasswordSuccess">
-                                {{ __('Simpan') }}
+                            <button type="submit" class="btn btn-outline-success btn-sm swalPasswordSuccess">
+                               <b> {{ __('Simpan') }} </b>
                             </button>
 
                             {{--  @if (Route::has('password.request'))

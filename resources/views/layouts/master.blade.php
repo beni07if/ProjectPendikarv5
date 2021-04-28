@@ -122,7 +122,7 @@
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>  --}}
 
-{{--  <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function () {
       $('#example1').DataTable({
           dom: 'Bfrtip',
@@ -130,7 +130,7 @@
           //buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
       });
   });
-</script>  --}}
+</script>
 
     {{--  <script>
         $(function () {

@@ -35,12 +35,13 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        {{--  <a href="{{ route('tambahMahasiswa') }}" class="btn btn-info">Tambah Anggota Keluarga</a>
-                        --}}
+                        {{--  <a href="{{ route('dpns1ByProdi') }}" class="btn btn-info">Tambah Anggota Keluarga</a>  --}}
+
                         {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Tambah Nilai Periodik</a>  --}}
                         {{--  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
+                        {{--  <div class="card-body">
 
-                    </div>
+                        </div>  --}}
                     {{--  @if(session()->get('success'))
                     <div class="alert alert-success">
                         {{ session()->get('success') }}
@@ -54,85 +55,84 @@
                         @foreach($mahasiswa as $mhs)
                         @foreach($mhs->NilaiPeriodik as $nPeriodik)
                         <?php
-                                            //kalkulasi sholat
-                                                             $sholat = $nPeriodik->sholat_fardu;
-                                                          if (($sholat) > 32)
-                                                              $sholat = 100;
-                                                          elseif (($sholat) > 28)
-                                                          $sholat = 90;
-                                                          elseif (($sholat) > 25)
-                                                          $sholat = 80;
-                                                          elseif (($sholat) > 21)
-                                                          $sholat = 70;
-                                                          elseif (($sholat) > 18)
-                                                          $sholat = 60;
-                                                          elseif (($sholat) > 14)
-                                                          $sholat = 50;
-                                                          elseif (($sholat) > 11)
-                                                          $sholat = 40;
-                                                          elseif (($sholat) > 7)
-                                                          $sholat = 30;
-                                                          elseif (($sholat) > 4)
-                                                          $sholat = 20;
-                                                          elseif (($sholat) > 0)
-                                                          $sholat = 10;
-                                                          else
-                                                          $sholat = 0;
-                                              // end kalkulasi sholat
+                        //kalkulasi sholat
+                                $sholat = $nPeriodik->sholat_fardu;
+                            if (($sholat) > 32)
+                                $sholat = 100;
+                            elseif (($sholat) > 28)
+                            $sholat = 90;
+                            elseif (($sholat) > 25)
+                            $sholat = 80;
+                            elseif (($sholat) > 21)
+                            $sholat = 70;
+                            elseif (($sholat) > 18)
+                            $sholat = 60;
+                            elseif (($sholat) > 14)
+                            $sholat = 50;
+                            elseif (($sholat) > 11)
+                            $sholat = 40;
+                            elseif (($sholat) > 7)
+                            $sholat = 30;
+                            elseif (($sholat) > 4)
+                            $sholat = 20;
+                            elseif (($sholat) > 0)
+                            $sholat = 10;
+                            else
+                            $sholat = 0;
+                            // end kalkulasi sholat
 
-                                              //kalkulasi dzikir
-                                                          $dzikir = $nPeriodik->dzikir;
-                                                          if (($dzikir) > 105)
-                                                              $dzikir = 100;
-                                                          elseif (($dzikir) > 83)
-                                                          $dzikir = 80;
-                                                          elseif (($dzikir) > 62)
-                                                          $dzikir = 60;
-                                                          elseif (($dzikir) > 41)
-                                                          $dzikir = 40;
-                                                          elseif (($dzikir) > 20)
-                                                          $dzikir = 20;
-                                                          elseif (($dzikir) > 0)
-                                                          $dzikir = 10;
-                                                          else
-                                                          $dzikir = 0;
-                                              //end kalkulasi dzikir
+                            //kalkulasi dzikir
+                            $dzikir = $nPeriodik->dzikir;
+                            if (($dzikir) > 105)
+                                $dzikir = 100;
+                            elseif (($dzikir) > 83)
+                            $dzikir = 80;
+                            elseif (($dzikir) > 62)
+                            $dzikir = 60;
+                            elseif (($dzikir) > 41)
+                            $dzikir = 40;
+                            elseif (($dzikir) > 20)
+                            $dzikir = 20;
+                            elseif (($dzikir) > 0)
+                            $dzikir = 10;
+                            else
+                            $dzikir = 0;
+                            //end kalkulasi dzikir
 
-                                              //kalkulasi tilawah
-                                              $saritilawah = $nPeriodik->tilawatil_quran;
-                                              if (($saritilawah) > 45)
-                                                  $saritilawah = 100;
-                                              elseif (($saritilawah) > 40)
-                                              $saritilawah = 90;
-                                              elseif (($saritilawah) > 35)
-                                              $saritilawah = 80;
-                                              elseif (($saritilawah) > 30)
-                                              $saritilawah = 70;
-                                              elseif (($saritilawah) > 25)
-                                              $saritilawah = 60;
-                                              elseif (($saritilawah) > 20)
-                                              $saritilawah = 50;
-                                              elseif (($saritilawah) > 15)
-                                              $saritilawah = 40;
-                                              elseif (($saritilawah) > 5)
-                                              $saritilawah = 20;
-                                              elseif (($saritilawah) > 0)
-                                              $saritilawah = 10;
-                                              else
-                                              $saritilawah = 0;
-                                              //end kalkulasi tilawah
-                                                      ?>
+                            //kalkulasi tilawah
+                            $saritilawah = $nPeriodik->tilawatil_quran;
+                            if (($saritilawah) > 45)
+                                $saritilawah = 100;
+                            elseif (($saritilawah) > 40)
+                            $saritilawah = 90;
+                            elseif (($saritilawah) > 35)
+                            $saritilawah = 80;
+                            elseif (($saritilawah) > 30)
+                            $saritilawah = 70;
+                            elseif (($saritilawah) > 25)
+                            $saritilawah = 60;
+                            elseif (($saritilawah) > 20)
+                            $saritilawah = 50;
+                            elseif (($saritilawah) > 15)
+                            $saritilawah = 40;
+                            elseif (($saritilawah) > 5)
+                            $saritilawah = 20;
+                            elseif (($saritilawah) > 0)
+                            $saritilawah = 10;
+                            else
+                            $saritilawah = 0;
+                            //end kalkulasi tilawah
+                        ?>
                         <?php
-                                                            $tugasTerstruktur = (($nPeriodik->ukhuwah_islamiyah)+($nPeriodik->ukhuwah_wathoniyah))/2;
-                                                            $ujianKompetensi = (($nPeriodik->fardu_kifayah)+($nPeriodik->hafalan_doa)+($nPeriodik->baca_quran))/3;
-                                                            $aktivitasHarian = (($sholat)+($nPeriodik->dzikir)+($nPeriodik->tilawatil_quran))/3;
-                                                            $dpns11 = (($nPeriodik->kehadiran)+($tugasTerstruktur)+($ujianKompetensi)+($aktivitasHarian));
-                                                            ?>
+                            $tugasTerstruktur = (($nPeriodik->ukhuwah_islamiyah)+($nPeriodik->ukhuwah_wathoniyah))/2;
+                            $ujianKompetensi = (($nPeriodik->fardu_kifayah)+($nPeriodik->hafalan_doa)+($nPeriodik->baca_quran))/3;
+                            $aktivitasHarian = (($sholat)+($nPeriodik->dzikir)+($nPeriodik->tilawatil_quran))/3;
+                            $dpns11 = (($nPeriodik->kehadiran)+($tugasTerstruktur)+($ujianKompetensi)+($aktivitasHarian));
+                            ?>
                         @endforeach
                         @endforeach
                         @endif
                         {{--  <b>DPNS 1</b> <a class="float-right text-muted">{{ $dpns11 }}</a>  --}}
-
 
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>

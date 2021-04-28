@@ -270,6 +270,7 @@ Route::get('detailNPDpns3/{id}', 'DpnsControllerAdmin@detailNPDpns3')->name('det
 Route::get('dpnaHome', 'DpnsControllerAdmin@dpnaHome')->name('dpnaHomeKoordinator');
 Route::get('dpnaDetail/{id}', 'DpnsControllerAdmin@dpnaDetail')->name('dpnaDetailKoordinator');
 Route::get('detailNPDpna/{id}', 'DpnsControllerAdmin@detailNPDpna')->name('detailNPDpna');
+Route::get('dpnaSortByKeluarga/{keluarga}', 'DpnsControllerAdmin@dpnaSortByKeluarga')->name('dpnaSortByKeluarga');
 
 Route::get('pengaduanListKoordinator', 'PengaduanControllerAdmin@index')->name('pengaduanListKoordinator');
 Route::get('pesan-personal-mahasiswa/{user_id}', 'PengaduanControllerAdmin@pesanPersonalVsKoor')->name('pesanPersonalVsKoor');
@@ -288,6 +289,7 @@ Route::post('update-detail-mahasiswa/{id}', 'AdminController@updateMhs')->name('
 // Route::get('pesan-personal-mhs/{user_id}', 'MahasiswaController@pesanPersonalVsMhs')->name('pesanPersonalVsMhs');
 
 
+Route::resource('post', 'DpnsControllerAdmin', ['only' => ['index'],]);
 
 
 

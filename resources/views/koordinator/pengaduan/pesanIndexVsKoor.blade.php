@@ -43,7 +43,7 @@
                     @endif  --}}
                      <!-- /.card-header -->
                     <div class="card-body table-responsive">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -70,9 +70,14 @@
                                     <td>{{ $mhs->name }}</td>
                                     <td>{{ $pesan->pesan }} <br><p class="text-muted">( {{ $pesan->tanggal }} ({{ $pesan->jam }}) )</td>
                                     <td>{{ $pesan->balasan }} <br><p class="text-muted">( {{ $pesan->tanggal_balas }} ({{ $pesan->jam_balas }}) )</td>
+
+                                    {{--  <td> {{ @if($pesan->balasan === null )  { }}
+                                        <span class="badge badge-info">belum dibalas..</span> }
+                                    @else {{ $pesan->balasan }} <br><p class="text-muted">( {{ $pesan->tanggal_balas }} ({{ $pesan->jam_balas }}) )</td>  --}}
+
                                     {{--  <td>{{ $pesan->tanggal }}</td>
                                     <td>{{ $pesan->jam }}</td>  --}}
-                                    <td></td>
+                                    {{--  <td></td>  --}}
                                     {{--  <td>{{ $pesan->no_hp }}</td>  --}}
                                     <td>
                                         <a href="{{ route('pesanVsKoor', $pesan->id) }}" class="btn btn-sm btn-info">Balas</a>

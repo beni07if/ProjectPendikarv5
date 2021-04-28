@@ -47,7 +47,7 @@
                     @endif  --}}
                      <!-- /.card-header -->
                     <div class="card-body table-responsive">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>No</th>
