@@ -77,7 +77,7 @@
                                     <td>{{ $mhs->keluarga }}</td>
                                     <td>{{ $mhs->no_hp }}</td>
                                     <td>
-                                        <a href="{{ route('detailMhs', $mhs->id) }}" type="button" class="btn btn-sm btn-success">Detail</a>
+                                        <a href="{{ route('detailMhs', $mhs->id) }}" type="button" class="btn btn-sm btn-info fas fa-eye">Detail</a>
                                         {{--  <p class="btn btn-info btn-xs"><a href="{{ route('showNilaiPeriodik', $mhs->id) }}">view</p>
                                         <p class="btn btn-warning btn-xs"><a href="{{ route('editMahasiswa', $mhs->id) }}">edit</p>  --}}
                                         {{--  <p class="btn btn-danger btn-xs">delete</p>  --}}

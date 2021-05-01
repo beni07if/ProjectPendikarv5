@@ -179,7 +179,7 @@
                                     <td>{{ $dpns1 }}</td>
                                     <td>
                                         <a href="{{ route('detailNPDpna', $nPeriodik->id) }}"
-                                            class="btn btn-info">Detail</a>
+                                            class="btn btn-info btn-sm fas fa-eye">Detail</a>
                                         @if(session()->get('success'))
                                         <div class="alert alert-success">
                                             {{ session()->get('success') }}
@@ -295,7 +295,7 @@
                             @endforeach
                             @endforeach
                             @endif
-                            <b>DPNS 1</b> <a class="float-right text-muted">{{ number_format($dpns11Hasil,2) }} | {{ number_format($dpns11Hasil,2)/4 }}</a>
+                            <b>Total | DPNS 1</b> <a class="float-right text-muted">{{ number_format($dpns11Hasil,2) }} | {{ number_format($dpns11Hasil,2)/4 }}</a>
                         </div>
                     </div>
                     <!-- /.card-body -->

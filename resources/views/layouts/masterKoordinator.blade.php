@@ -245,6 +245,12 @@
         title: 'Password berhasil diubah..'
         })
         });
+        $('.swalDeleteNilaiPeriodik').click(function() {
+        Toast.fire({
+        type: 'success',
+        title: 'Nilai periodik berhasil dihapus..'
+        })
+        });
 
 
         $('.swalDefaultInfo').click(function() {

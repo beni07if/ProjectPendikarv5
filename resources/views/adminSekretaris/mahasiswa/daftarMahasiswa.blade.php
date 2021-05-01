@@ -35,7 +35,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('tambahMahasiswa') }}" class="btn btn-info" {{$timbul}}>Tambah Anggota Keluarga</a>
+                        <a href="{{ route('tambahMahasiswa') }}" class="btn btn-info" {{$timbul}}> <i class="fas fa-plus"></i> Tambah Anggota Keluarga</a>
                         {{--  <a href="" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm" {{$timbul}}>Tambah Anggota Keluarga</a>  --}}
                         {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Tambah Anggota Pengaduan</a>  --}}
                         {{--  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
@@ -81,7 +81,7 @@
                                     <td>{{ $mhs->role }}</td>
                                     <td>{{ $mhs->no_hp }}</td>
                                     <td>
-                                        <a href="{{ route('editMahasiswa', $mhs->id) }}" type="button" class="{{$buttonViewEdit}} {{$icon}} " >{{$pesan}}</a>
+                                        <a href="{{ route('editMahasiswa', $mhs->id) }}" type="button" class="{{$buttonViewEdit}} {{$icon}}">{{$pesan}}</a>
                                         {{--  <p class="btn btn-info btn-xs"><a href="{{ route('showNilaiPeriodik', $mhs->id) }}">view</p>
                                         <p class="btn btn-warning btn-xs"><a href="{{ route('editMahasiswa', $mhs->id) }}">edit</p>  --}}
                                         {{--  <p class="btn btn-danger btn-xs">delete</p>  --}}

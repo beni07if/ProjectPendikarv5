@@ -207,6 +207,6 @@ class NilaiPeriodikControllerAdmin extends Controller
         $nilaiPeriodik = NilaiPeriodik::findOrFail($id);
         $nilaiPeriodik->delete();
 
-        return redirect('/nilaiPeriodik')->with('Success', 'Data Berhasil Dihapus..');
+        return redirect('/nilai-periodik-admin-index')->with('Success', 'Data Berhasil Dihapus..');
     }
 }

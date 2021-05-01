@@ -180,13 +180,13 @@
         $('.swalDefaultSuccess').click(function() {
           Toast.fire({
             type: 'success',
-            title: 'Nilai Periodik Terkirim'
+            title: 'Nilai Periodik Berhasil Ditambahkan..'
           })
         });
         $('.swalDefaultSuccessEdit').click(function() {
           Toast.fire({
             type: 'success',
-            title: 'Nilai Periodik Berhasil Diubah'
+            title: 'Nilai Periodik Berhasil Diubah..'
           })
         });
         $('.swalDefaultSuccessPesanVsMhs').click(function() {

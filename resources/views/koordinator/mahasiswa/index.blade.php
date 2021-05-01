@@ -55,7 +55,7 @@
                 </li>
               </ul>
 
-              <a href="{{ route('editDataKoordinator')}}" class="btn btn-outline-warning btn-sm"><b>Edit</b></a>
+              <a href="{{ route('editDataKoordinator')}}" class="btn btn-outline-warning btn-sm btn-block"><i class="fas fa-edit"></i><b>Edit</b></a>
             </div>
             <!-- /.card-body -->
           </div>

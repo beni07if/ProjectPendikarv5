@@ -56,27 +56,24 @@
                 <h3 class="timeline-header"><a href="#">{{ Auth::user()->name }}</a> </h3>
                 <form method="POST" action="{{ route('pengaduan.sendMhs') }} " enctype="multipart/form-data">
                 @csrf
-            <div class="card-body">
-              <div class="form-group">
-                {{--  <label for="user_id">User ID</label>  --}}
-                <input type="text" hidden  class="form-control" id="user_id" name="user_id" value={{ Auth::user()->id }} required>
-                <input type="text" hidden  class="form-control" id="tanggal" name="tanggal" value=<?php date_default_timezone_set('Asia/Jakarta'); echo date(' d-M-Y ') ?> required>
-                <input type="text" hidden class="form-control" id="jam" name="jam" value=<?php date_default_timezone_set('Asia/Jakarta'); echo date(' H:i ') ?> required>
-                <input type="text" hidden  class="form-control" id="balasan" name="balasan" value="" >
-                <input type="text" hidden  class="form-control" id="tanggal_balas" name="tanggal_balas" value="" >
-                <input type="text" hidden class="form-control" id="jam_balas" name="jam_balas" value="" >
-              </div>
-              <div class="form-group">
-                {{--  <label for="pesan">Pesan</label>  --}}
-                <textarea type="text-area" class="form-control" id="pesan" name="pesan" required placeholder="Pesan"></textarea>
-              </div>
-            </div>
-            <!-- /.card-body -->
-
-            <div class="card-footer">
-            <button type="submit" class="btn btn-info swalDefaultSuccessPesanVsMhs">Kirim</button>
-            </div>
-          </form>
+                    <div class="card-body">
+                    <div class="form-group">
+                        {{--  <label for="user_id">User ID</label>  --}}
+                        <input type="text" hidden  class="form-control" id="user_id" name="user_id" value={{ Auth::user()->id }} required>
+                        <input type="text" hidden  class="form-control" id="tanggal" name="tanggal" value=<?php date_default_timezone_set('Asia/Jakarta'); echo date(' d-M-Y ') ?> required>
+                        <input type="text" hidden class="form-control" id="jam" name="jam" value=<?php date_default_timezone_set('Asia/Jakarta'); echo date(' H:i ') ?> required>
+                        <input type="text" hidden  class="form-control" id="balasan" name="balasan" value="" >
+                        <input type="text" hidden  class="form-control" id="tanggal_balas" name="tanggal_balas" value="" >
+                        <input type="text" hidden class="form-control" id="jam_balas" name="jam_balas" value="" >
+                    </div>
+                    <div class="form-group">
+                        {{--  <label for="pesan">Pesan</label>  --}}
+                        <textarea type="text-area" class="form-control" id="pesan" name="pesan" required placeholder="Pesan"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success swalDefaultSuccessPesanVsMhs">Kirim</button>
+                    </div>
+                    <!-- /.card-body -->
+                </form>
             </div>
           </div>
           <!-- END timeline item -->

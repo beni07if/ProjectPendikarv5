@@ -35,7 +35,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('tambahNilaiPeriodik') }}" class="btn btn-info" {{$timbul}}>Tambah Nilai Periodik</a>
+                        <a href="{{ route('tambahNilaiPeriodik') }}" class="btn btn-info" {{$timbul}}> <i class="fas fa-plus"></i> Tambah Nilai Periodik</a>
                         {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm" {{$timbul}}>Tambah Nilai Periodik</a>  --}}
                         {{--  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
 
@@ -69,6 +69,7 @@
                                 @foreach($mahasiswa as $mhs)
                                 @foreach($mhs->NilaiPeriodik as $nPeriodik)
                                 <?php
+                                $no++;
                                                                             //kalkulasi sholat
                                                                             $sholats = $nPeriodik->sholat_fardu;
                                                                                 if (($sholats) > 32){
@@ -162,7 +163,8 @@
                                                                             $dpna = ($kehadiran+$tugasTerstruktur+$ujianKompetensi+$aktivitasHarian+$bukuHarian);
                                                                             ?>
                                 <tr>
-                                    <td>{{ $nPeriodik->id }}</td>
+                                    {{-- <td>{{ $nPeriodik->id }}</td> --}}
+                                    <td>{{ $no }}</td>
                                     <td>{{ $mhs->name }}</td>
                                     <td>{{ $kehadiran }}</td>
                                     <td>{{ $tugasTerstruktur }}</td>
@@ -170,7 +172,7 @@
                                     <td>{{ number_format($aktivitasHarian,2) }}</td>
                                     <td>{{ $bukuHarian }}</td>
                                     <td>
-                                        <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-info btn-sm fas fa-eye">{{$pesan}}</a>
+                                        <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-info btn-xs"><i class="fas fa-eye"></i> {{$pesan}}</a>
                                         {{--  <a href="{{ route('nilaiPeriodik.show', $mhs->id) }}" type="button" class="btn btn-info btn-sm fas fa-folder">Detail/dakperlu</a>  --}}
                                         {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editNilaiPeriodik', $nPeriodik->id, $nPeriodik->mahasiswa_id) }}">edit</p>  --}}
                                         {{--  <p class="btn btn-danger btn-xs">delete</p>  --}}
@@ -178,7 +180,7 @@
                                             @csrf
                                             @method('DELETE')
                                              {{--  <button class="btn btn-danger btn-sm fas fa-trash"  type="submit">Delete</button>  --}}
-                                             <button type="submit" class="btn btn-danger fas fa-trash btn-sm swalDefaultDelete" {{$timbul}}>
+                                             <button type="submit" class="btn btn-danger btn-xs swalDefaultDelete" {{$timbul}}><i class="fas fa-trash"></i>
                                              {{--  <button type="button" class="btn btn-danger btn-sm swalDefaultSuccess" data-toggle="modal" data-target="#modal-default">  --}}
                                                  Hapus
                                             </button>

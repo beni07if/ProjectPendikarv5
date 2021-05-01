@@ -35,7 +35,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('pesanVsMhs') }}" class="btn btn-info fa fa-pencil">Buat Pesan</a>
+                        <a href="{{ route('pesanVsMhs') }}" class="btn btn-info"><i class="fas fa-plus"></i> Buat Pesan</a>
                         {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Tambah Anggota Pengaduan</a>  --}}
                         {{--  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
 

@@ -204,7 +204,7 @@
                                             {{--  <td>{{ $nPeriodik->tanggal }}</td> --}}
                                             <td>
                                                 <a href="{{ route('nilaiPeriodik.edit', $nPeriodik->id)}}" type="button" class="btn btn-sm
-                                                                  btn-info btn-sm fas fa-eye">Detail</a>
+                                                                  btn-info btn-sm"><i class="fas fa-eye"></i> Detail</a>
                                                 {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editdpns1', $nPeriodik->id) }}">edit
                                                 </p> --}}
                                                 {{--  <a href="{{ route('dpns1.edit', $nPeriodik->id)}}" type="button" class="btn btn-sm
@@ -325,7 +325,7 @@
 
                                 @endforeach
                                 @endif
-                                <b>SUM | DPNA</b> <a class="float-right text-muted">{{ number_format($dpnaHasil,2) }} | {{ number_format($dpnaHasil,2)/16 }}</a><br>
+                                <b>Total | DPNA</b> <a class="float-right text-muted">{{ number_format($dpnaHasil,2) }} | {{ number_format($dpnaHasil,2)/16 }}</a><br>
                                 </div>
                               </div>
                             </div>

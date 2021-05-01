@@ -30,8 +30,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    </div>
-                    @if (session('error'))
+                    {{-- @if (session('error'))
                     <div class="alert alert danger" role="alert">
                         {{ session('error') }}
                     </div>
@@ -40,9 +39,9 @@
                         <div class="alert alert-succest swalDefaultSuccess" role="alert">
                             <strong class="swalDefaultSuccess">Mantap</strong>{{ session()->get('message')}}
                         </div>
-                    @endif
+                    @endif --}}
                      <!-- /.card-header -->
-                            <div class="modal-body">
+                            <div class="card-body">
                                 <form method="POST" action="{{ route('mahasiswa.update', ['id' => $mahasiswa->id]) }} " enctype="multipart/form-data">
                                     @csrf
                                     {{--  @method('PUT')  --}}
@@ -118,17 +117,13 @@
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                   </div>  --}}
+                                  <button type="submit" class="btn btn-success swalDefaultEditMahasiswa" {{$timbul}}>Simpan</button>
                                 </div>
                                 <!-- /.card-body -->
-
-                                <div class="card-footer">
                                   {{--  <button type="submit" class="btn btn-primary">Submit</button>  --}}
-                                <button type="submit" class="btn btn-info btn-sm swalDefaultEditMahasiswa" {{$timbul}}>Simpan</button>
-                                </div>
+
                               </form>
-                            </div>
                         </div>
-                    </div>
                 </div>
                 <!-- /.card -->
             </div>

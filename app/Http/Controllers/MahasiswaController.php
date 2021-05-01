@@ -387,12 +387,12 @@ class MahasiswaController extends Controller
         // $mhs = $mahasiswa->name;
         if (Auth::user()->role == 'sekretaris') {
             $timbul = '';
-            $pesan = 'Edit';
-            $icon = 'fas fa-edit';
-            $buttonViewEdit = 'btn btn-warning btn-sm';
+            $pesan = 'Detail';
+            $icon = 'fas fa-eye';
+            $buttonViewEdit = 'btn btn-info btn-sm';
         } else {
             $timbul = 'hidden';
-            $pesan = 'Lihat';
+            $pesan = 'Detail';
             $icon = 'fa fa-eye';
             $buttonViewEdit = 'btn btn-info btn-sm';
         }

@@ -173,17 +173,19 @@
                                     <td>{{ $bukuHarian }}</td>
                                     <td>{{ $nPeriodik->pekan_ke }}</td>
                                     <td>
-                                        <a href="{{ route('nilaiPeriodikAdminEdit', $nPeriodik->id)}}" type="button" class="btn btn-info btn-sm fas fa-edit">Detail</a>
+                                        <a href="{{ route('nilaiPeriodikAdminEdit', $nPeriodik->id)}}" type="button" class="btn btn-info btn-xs fas fa-eye">Detail</a>
                                         {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info btn-sm fas fa-folder" data-toggle="modal" data-target=".bd-example-modal-sm">Detail</a>  --}}
                                         {{--  <a href="{{ route('nilaiPeriodikAdminShow', $mhs->id) }}" type="button" class="btn btn-info btn-sm fas fa-folder">Detail</a>  --}}
                                         {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editNilaiPeriodik', $nPeriodik->id, $nPeriodik->mahasiswa_id) }}">edit
                                         </p> --}}
                                         {{--  <p class="btn btn-danger btn-xs">delete</p>  --}}
-                                        {{--  <form action="{{ route('nilaiPeriodik.destroy', $nPeriodik->id)}}" method="post">
+                                         <form action="{{ route('nilaiPeriodikAdminDelete', $nPeriodik->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger btn-sm fas fa-trash" type="submit">Delete</button>
-                                        </form>  --}}
+                                            {{-- <a class="btn btn-danger btn-sm" class= "fas fa-trash" type="submit">Delete</a> --}}
+                                            <button class="btn btn-danger btn-xs swalDeleteNilaiPeriodik" type="submit">
+                                                <i class="fas fa-trash"></i>Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

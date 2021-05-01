@@ -255,6 +255,7 @@ Route::get('/nilai-periodik-admin-index', 'NilaiPeriodikControllerAdmin@index')-
 Route::get('/nilai-periodik-admin-show/{id}', 'NilaiPeriodikControllerAdmin@show')->name('nilaiPeriodikAdminShow');
 Route::get('/nilai-periodik-admin-edit/{id}', 'NilaiPeriodikControllerAdmin@edit')->name('nilaiPeriodikAdminEdit');
 Route::put('/nilai-periodik-admin-update/{id}', 'NilaiPeriodikControllerAdmin@update')->name('nilaiPeriodikControllerAdminUpdate');
+Route::delete('/nilai-periodik-admin-delete/{id}', 'NilaiPeriodikControllerAdmin@destroy')->name('nilaiPeriodikAdminDelete');
 
 Route::get('dpns1/{id}', 'DpnsControllerAdmin@dpns1')->name('dpns1Koordinator');
 

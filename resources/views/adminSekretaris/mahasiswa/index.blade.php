@@ -70,7 +70,7 @@
                     <b>Angkatan</b> <a class="float-right text-muted">{{ Auth::user()->periode }}</a>
                 </li>
               </ul>
-                <a href="{{ route('indexEditMhs') }}" class="btn btn-warning btn-block"><b>Edit</b></a>
+                <a href="{{ route('indexEditMhs') }}" class="btn btn-outline-warning btn-sm btn-block"><i class="fas fa-edit"></i><b>Edit</b></a>
               {{--  <b href="#" class="btn btn-primary btn-block"><b>Follow</b></b>  --}}
             </div>
             <!-- /.card-body -->
@@ -168,7 +168,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-success swalPasswordSuccess">
+                            <button type="submit" class="btn btn-outline-success btn-sm swalPasswordSuccess">
                                 {{ __('Simpan') }}
                             </button>
 

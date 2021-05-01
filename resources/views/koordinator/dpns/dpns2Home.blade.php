@@ -135,7 +135,7 @@
                         {{--  <b>DPNS 2</b> <a class="float-right text-muted">{{ $dpns22 }}</a>  --}}
 
 
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -154,7 +154,7 @@
                                 <tr>
                                     <td>{{ $no }}</td>
                                     <td>{{ $mhs->name }}</td>
-                                    <td>{{ $mhs->keluarga }}</td>
+                                    <td>Keluarga {{ $mhs->keluarga }}</td>
                                     {{--  <td>{{ number_format($dpns22,2) }}</td> --}}
                                     <td>
                                         <a href="{{ route('dpns2DetailKoordinator', $mhs->id) }}" type="button"

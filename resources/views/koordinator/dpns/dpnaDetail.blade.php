@@ -178,7 +178,7 @@
                                     <td>{{ $nPeriodik->tanggal }}</td>
                                     <td>{{ $dpna }}</td>
                                     <td>
-                                            <a href="{{ route('detailNPDpna', $nPeriodik->id) }}" class="btn btn-info">Detail</a>
+                                            <a href="{{ route('detailNPDpna', $nPeriodik->id) }}" class="btn btn-info btn-sm fas fa-eye">Detail</a>
                                         @if(session()->get('success'))
                                         <div class="alert alert-success">
                                             {{ session()->get('success') }}
