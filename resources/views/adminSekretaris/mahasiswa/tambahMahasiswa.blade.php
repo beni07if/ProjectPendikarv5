@@ -113,8 +113,8 @@
 
                         <div class="card-footer">
                         {{--  <button type="submit" class="btn btn-primary">Submit</button>  --}}
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info swalDefaultTambahMahasiswa">Save</button>
+                        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                        <button type="submit" class="btn btn-success swalDefaultTambahMahasiswa">Simpan</button>
                         </div>
                     </form>
                 </div>
