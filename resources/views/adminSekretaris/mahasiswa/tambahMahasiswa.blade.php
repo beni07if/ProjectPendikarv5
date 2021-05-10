@@ -47,6 +47,13 @@
                             <input type="text" class="form-control" id="nim" name="nim" required placeholder="Masukan NIM..">
                         </div>
                         <div class="form-group">
+                            <label for="jenis_kelamin">Jenis Kelamin</label>
+                            <select class="form-control select2" required="Minimal 0" name="jenis_kelamin" id="jenis_kelamin">
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="email">Email address</label>
                             <input type="email" class="form-control" id="email" name="email" required placeholder="Enter email">
                         </div>
@@ -60,12 +67,12 @@
                         </div>
                         <div class="form-group">
                             <label for="no_hp">Nomor HP</label>
-                            <input type="text" class="form-control" id="no_hp" name="no_hp" required placeholder="">
+                            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="no_hp" name="no_hp" required placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="keluarga">Keluarga</label>
                             @if (Auth::check())
-                            <input type="text" class="form-control" id="keluarga" name="keluarga" value="{{ Auth::user()->keluarga }}" required placeholder="Masukan keluarga" readonly>
+                            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="keluarga" name="keluarga" value="{{ Auth::user()->keluarga }}" required placeholder="Masukan keluarga" readonly>
                             @endif
                         </div>
                         <div class="form-group">
@@ -81,7 +88,7 @@
                         <div class="form-group">
                             <label for="periode">Periode</label>
                             @if (auth::check())
-                            <input type="text" class="form-control" id="periode" value="{{ Auth::user()->periode }}" name="periode" required placeholder="Masukan Periode.." readonly>
+                            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="periode" value="{{ Auth::user()->periode }}" name="periode" required placeholder="Masukan Periode.." readonly>
                             @endif
                         </div>
                         <div class="form-group row">
@@ -114,7 +121,7 @@
                         <div class="card-footer">
                         {{--  <button type="submit" class="btn btn-primary">Submit</button>  --}}
                         {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-                        <button type="submit" class="btn btn-success swalDefaultTambahMahasiswa">Simpan</button>
+                        <button type="submit" onclick="validation()" class="btn btn-success swalDefaultTambahMahasiswa">Simpan</button>
                         </div>
                     </form>
                 </div>
@@ -131,3 +138,27 @@
 <!-- /.content-wrapper -->
 
 @endsection
+
+<script type="text/javascript">
+function validation(){
+  var validasiHuruf = /^[a-zA-Z ]+$/;
+  var nama = document.getElementById("nama");
+  if (nama.value.match(validasiHuruf)) {
+      alert("Nama Anda adalah " + nama.value);
+  } else {
+      alert("Masukkan nama Anda!\nFormat wajib huruf!");
+      nama.value="";
+      nama.focus();
+      return false;
+  }
+}
+</script>
+
+<script>
+function hanyaAngka(event) {
+        var angka = (event.which) ? event.which : event.keyCode
+        if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+        return false;
+        return true;
+    }
+</script>

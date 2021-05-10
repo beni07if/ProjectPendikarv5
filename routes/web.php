@@ -292,6 +292,8 @@ Route::post('update-detail-mahasiswa/{id}', 'AdminController@updateMhs')->name('
 
 Route::resource('post', 'DpnsControllerAdmin', ['only' => ['index'],]);
 
+Route::get('/api', 'DpnsControllerAdmin@apiStore')->name('apiStore');
+
 
 
 

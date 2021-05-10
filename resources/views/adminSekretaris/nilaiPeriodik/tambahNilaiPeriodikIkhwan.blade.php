@@ -545,10 +545,11 @@
                                 <div class="col-md-6">
                                     <select class="form-control select2" required="Minimal 0" name="sholat_fardu"
                                         style="width: 100%;">
-                                        <option selected="selected" value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
+                                        <option selected="selected" value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                         <option value="5">5</option>
                                         <option value="6">6</option>
                                         <option value="7">7</option>
@@ -589,8 +590,56 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Saritilawah Al-Quran') }}</label>
 
                                 <div class="col-md-6">
-                                    <input type="integer" class="form-control" id="tilawatil_quran" required="Minimal 0"
-                                        name="tilawatil_quran" onkeypress="return hanyaAngka(event)" placeholder="Jumlah Halaman">
+                                    <select class="form-control select2" required="Minimal 0" name="tilawatil_quran"
+                                        style="width: 100%;">
+                                        <option selected="selected" value="0">0 Halaman</option>
+                                        <option value="1">1 Halaman</option>
+                                        <option value="2">2 Halaman</option>
+                                        <option value="3">3 Halaman</option>
+                                        <option value="4">4 Halaman</option>
+                                        <option value="5">5 Halaman</option>
+                                        <option value="6">6 Halaman</option>
+                                        <option value="7">7 Halaman</option>
+                                        <option value="8">8 Halaman</option>
+                                        <option value="9">9 Halaman</option>
+                                        <option value="10">10 Halaman</option>
+                                        <option value="11">11 Halaman</option>
+                                        <option value="12">12 Halaman</option>
+                                        <option value="13">13 Halaman</option>
+                                        <option value="14">14 Halaman</option>
+                                        <option value="15">15 Halaman</option>
+                                        <option value="16">16 Halaman</option>
+                                        <option value="17">17 Halaman</option>
+                                        <option value="18">18 Halaman</option>
+                                        <option value="19">19 Halaman</option>
+                                        <option value="20">20 Halaman</option>
+                                        <option value="21">21 Halaman</option>
+                                        <option value="22">22 Halaman</option>
+                                        <option value="23">23 Halaman</option>
+                                        <option value="24">24 Halaman</option>
+                                        <option value="25">25 Halaman</option>
+                                        <option value="26">26 Halaman</option>
+                                        <option value="27">27 Halaman</option>
+                                        <option value="28">28 Halaman</option>
+                                        <option value="29">29 Halaman</option>
+                                        <option value="30">30 Halaman</option>
+                                        <option value="31">31 Halaman</option>
+                                        <option value="32">32 Halaman</option>
+                                        <option value="33">33 Halaman</option>
+                                        <option value="34">34 Halaman</option>
+                                        <option value="35">35 Halaman</option>
+                                        <option value="36">36 Halaman</option>
+                                        <option value="37">37 Halaman</option>
+                                        <option value="38">38 Halaman</option>
+                                        <option value="39">39 Halaman</option>
+                                        <option value="40">40 Halaman</option>
+                                        <option value="41">41 Halaman</option>
+                                        <option value="42">42 Halaman</option>
+                                        <option value="43">43 Halaman</option>
+                                        <option value="44">44 Halaman</option>
+                                        <option value="45">45 Halaman</option>
+                                        <option value="45">Lebih dari 45 Halaman</option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- /.row -->

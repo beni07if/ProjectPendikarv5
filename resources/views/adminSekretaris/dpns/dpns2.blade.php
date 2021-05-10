@@ -89,7 +89,7 @@
                                                 <th>Ujian Kompetensi</th>
                                                 <th>Aktivitas Harian</th>
                                                 <th>Buku Harian</th>
-                                                <th>NP</th>
+                                                <th>Jumlah</th>
                                                 <th>Keterangan </th>
                                             </tr>
                                         </thead>
@@ -151,13 +151,35 @@
 
                                             //kalkulasi tilawah
                                             $saritilawahs = $nPeriodik->tilawatil_quran;
-                                                if (($saritilawahs) > 45){
+                                                if (($saritilawahs) > 95){
+                                                    $saritilawah = 200;
+                                                }elseif (($saritilawahs) > 90){
+                                                    $saritilawah = 190;
+                                                }elseif (($saritilawahs) > 85){
+                                                    $saritilawah = 180;
+                                                }elseif (($saritilawahs) > 80){
+                                                    $saritilawah = 170;
+                                                }elseif (($saritilawahs) > 75){
+                                                    $saritilawah = 160;
+                                                }elseif (($saritilawahs) > 70){
+                                                    $saritilawah = 150;
+                                                }elseif (($saritilawahs) > 65){
+                                                    $saritilawah = 140;
+                                                }elseif (($saritilawahs) > 60){
+                                                    $saritilawah = 130;
+                                                }elseif (($saritilawahs) > 55){
+                                                    $saritilawah = 120;
+                                                }elseif (($saritilawahs) > 50){
+                                                    $saritilawah = 110;
+                                                }
+
+                                            elseif (($saritilawahs) > 45){
                                                     $saritilawah = 100;
                                                 }elseif (($saritilawahs) > 40){
                                                     $saritilawah = 90;
                                                 }elseif (($saritilawahs) > 35){
                                                     $saritilawah = 80;
-                                                }elseif (($saritilawahs) > 30){
+                                                }elseif (($saritilawahs) > 33){
                                                     $saritilawah = 70;
                                                 }elseif (($saritilawahs) > 25){
                                                     $saritilawah = 60;
@@ -165,6 +187,8 @@
                                                     $saritilawah = 50;
                                                 }elseif (($saritilawahs) > 15){
                                                     $saritilawah = 40;
+                                                }elseif (($saritilawahs) > 10){
+                                                    $saritilawah = 30;
                                                 }elseif (($saritilawahs) > 5){
                                                     $saritilawah = 20;
                                                 }elseif (($saritilawahs) > 0){
@@ -279,13 +303,35 @@
 
                                             //kalkulasi tilawah
                                             $saritilawahs = $nPeriodik->tilawatil_quran;
-                                                if (($saritilawahs) > 45){
+                                                if (($saritilawahs) > 95){
+                                                    $saritilawah = 200;
+                                                }elseif (($saritilawahs) > 90){
+                                                    $saritilawah = 190;
+                                                }elseif (($saritilawahs) > 85){
+                                                    $saritilawah = 180;
+                                                }elseif (($saritilawahs) > 80){
+                                                    $saritilawah = 170;
+                                                }elseif (($saritilawahs) > 75){
+                                                    $saritilawah = 160;
+                                                }elseif (($saritilawahs) > 70){
+                                                    $saritilawah = 150;
+                                                }elseif (($saritilawahs) > 65){
+                                                    $saritilawah = 140;
+                                                }elseif (($saritilawahs) > 60){
+                                                    $saritilawah = 130;
+                                                }elseif (($saritilawahs) > 55){
+                                                    $saritilawah = 120;
+                                                }elseif (($saritilawahs) > 50){
+                                                    $saritilawah = 110;
+                                                }
+
+                                            elseif (($saritilawahs) > 45){
                                                     $saritilawah = 100;
                                                 }elseif (($saritilawahs) > 40){
                                                     $saritilawah = 90;
                                                 }elseif (($saritilawahs) > 35){
                                                     $saritilawah = 80;
-                                                }elseif (($saritilawahs) > 30){
+                                                }elseif (($saritilawahs) > 33){
                                                     $saritilawah = 70;
                                                 }elseif (($saritilawahs) > 25){
                                                     $saritilawah = 60;
@@ -293,6 +339,8 @@
                                                     $saritilawah = 50;
                                                 }elseif (($saritilawahs) > 15){
                                                     $saritilawah = 40;
+                                                }elseif (($saritilawahs) > 10){
+                                                    $saritilawah = 30;
                                                 }elseif (($saritilawahs) > 5){
                                                     $saritilawah = 20;
                                                 }elseif (($saritilawahs) > 0){

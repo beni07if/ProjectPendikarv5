@@ -1,7 +1,11 @@
-@extends('layouts.masterKoordinator')
+@extends('layouts.master')
 
 @section('navbarTitle2')
 <a href="#" class="nav-link">Edit Nilai Periodik</a>
+@endsection
+
+@section('breadcrumb')
+<a href="#" class="nav-link">Sistem Penilaian Pendikar / Detail Nilai Periodik</a>
 @endsection
 
 @section('content')
@@ -28,7 +32,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Edit Nilai Periodik</li>
+                        <li class="breadcrumb-item active">Detail Nilai Periodik</li>
                     </ol>
                 </div>
             </div>
@@ -53,33 +57,37 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <!-- form start -->
-                    <form method="POST" action="{{ route('nilaiPeriodikControllerAdminUpdate', $nilaiPeriodik->id) }} " enctype="multipart/form-data" >
-                        <input type="hidden" name="_method" value="PUT">
+                    <form method="POST" action="{{ route('nilaiPeriodik.update', $nilaiPeriodik->id) }} " enctype="multipart/form-data" >
                         @csrf
                         @method('PUT')
+                        {{$nilaiPeriodik->id}}
                         {{--  <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label text-md-left">{{ __('Nama Mahasiswa') }}</label>
+
                             <div class="col-md-4">
                                 <select class="form-control select2" style="width: 100%;" required="Minimal 0" name="user_id">
-                                    @if (Auth::check())
-                                    @foreach($mahasiswa as $mhs)
+
+                                   @if (Auth::check())
+                                   @foreach($mahasiswa as $mhs)
                                     <option selected="selected" value="{{ $mhs->name }}">{{ $mhs->name }}</option>
-                                    @endforeach
-                                    @endif
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                        <label for="keluarga" class="col-md-2 col-form-label text-md-left">{{ __('Keluarga') }}</label>
-                            <div class="col-md-4">
-                                <select class="form-control select2" required="Minimal 0" name="keluarga" style="width: 100%;">
-                                    @if (Auth::check())
-                                    <option value="{{ $nilaiPeriodik->keluarga }}">{{ $nilaiPeriodik->keluarga }}</option>
-                                    @endif
+                                   @endforeach
+                                   @endif
                                 </select>
                             </div>
                         </div>  --}}
-                        <div>
+                        {{--  <div class="form-group row">
+                            <label for="keluarga" class="col-md-2 col-form-label text-md-left">{{ __('Keluarga') }}</label>
+
+                            <div class="col-md-4">
+                              <select class="form-control select2" required="Minimal 0" name="keluarga" style="width: 100%;">
+                                @if (Auth::check())
+                                <option value="{{ $nilaiPeriodik->keluarga }}" >{{ $nilaiPeriodik->keluarga }}</option>
+                                @endif
+                              </select>
+                            </div>
+                          </div>
+                        <div>  --}}
+
                             {{--  @if (Auth::check())
                                     @foreach($nilaiPeriodik as $np)
                                     @if($np->keluarga === $user->keluarga)  --}}
@@ -190,7 +198,7 @@
 
                                     <div class="col-md-6">
                                         <select class="form-control select2" style="width: 100%;" required="Minimal 0" name="hafalan_doa">
-                                            <option required="Minimal 0" name="hafalan_doa" selected="selected" value="{{ $nilaiPeriodik->hafalan_doa }}">{{ $nilaiPeriodik->hafalan_doa }}</option>
+                                            <option name="hafalan_doa"  selected="selected" value="{{ $nilaiPeriodik->hafalan_doa }}">{{ $nilaiPeriodik->hafalan_doa }}</option>
                                             <option name="hafalan_doa" value="1">1</option>
                                             <option name="hafalan_doa" value="2">2</option>
                                             <option name="hafalan_doa" value="3">3</option>
@@ -301,7 +309,7 @@
 
                                     <div class="col-md-6">
                                         <select class="form-control select2" style="width: 100%;" required="Minimal 0" name="fardu_kifayah">
-                                            <option required="Minimal 0" name="fardu_kifayah" selected="selected" value="{{ $nilaiPeriodik->fardu_kifayah }}">{{ $nilaiPeriodik->fardu_kifayah }}</option>
+                                            <option name="fardu_kifayah"  selected="selected" value="{{ $nilaiPeriodik->fardu_kifayah }}">{{ $nilaiPeriodik->fardu_kifayah }}</option>
                                             <option name="fardu_kifayah" value="1">1</option>
                                             <option name="fardu_kifayah" value="2">2</option>
                                             <option name="fardu_kifayah" value="3">3</option>
@@ -412,7 +420,6 @@
 
                                     <div class="col-md-6">
                                         <select class="form-control select2" required="Minimal 0" name="baca_quran" value="10" style="width: 100%;">
-                                            <option required="Minimal 0" name="baca_quran" selected="selected" value="{{ $nilaiPeriodik->baca_quran }}">{{ $nilaiPeriodik->baca_quran }}</option>
                                             <option name="baca_quran" value="1">1</option>
                                             <option name="baca_quran" value="2">2</option>
                                             <option name="baca_quran" value="3">3</option>
@@ -571,11 +578,57 @@
                                 <!-- /.row -->
                                 <div class="form-group row">
                                     <label for="tilawatil_quran"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Tilawatil Quran') }}</label>
-
+                                        class="col-md-4 col-form-label text-md-right">{{ __('Saritilawah Al-Quran') }}</label>
                                     <div class="col-md-6">
-                                        <input type="integer" class="form-control" id="tilawatil_quran" required="Minimal 0" name="tilawatil_quran" value="{{ $nilaiPeriodik->tilawatil_quran }}"
-                                            placeholder="Jumlah Halaman.." onkeypress="return hanyaAngka(event)">
+                                        <select class="form-control select2" style="width: 100%;" required="Minimal 0" name="tilawatil_quran">
+                                            <option required="Minimal 0" name="tilawatil_quran" selected="selected" value="{{ $nilaiPeriodik->tilawatil_quran }}">{{ $nilaiPeriodik->tilawatil_quran }} Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="1">1 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="2">2 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="3">3 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="4">4 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="5">5 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="6">6 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="7">7 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="8">8 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="9">9 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="10">10 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="11">11 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="12">12 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="13">13 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="14">14 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="15">15 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="16">16 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="17">17 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="18">18 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="19">19 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="20">20 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="21">21 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="22">22 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="23">23 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="24">24 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="25">25 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="26">26 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="27">27 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="28">28 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="29">29 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="30">30 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="31">31 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="32">32 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="33">33 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="34">34 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="35">35 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="36">36 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="37">37 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="38">38 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="39">39 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="40">40 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="41">41 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="42">42 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="43">33 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="44">44 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="45">45 Halaman</option>
+                                            <option required="Minimal 0" name="tilawatil_quran" value="45">Diatas 45 Halaman</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -585,7 +638,7 @@
 
                                     <div class="col-md-6">
                                         <input type="integer" class="form-control" id="dzikir" required="Minimal 0" name="dzikir" value="{{ $nilaiPeriodik->dzikir }}"
-                                            placeholder="Jumlah Menit.." onkeypress="return hanyaAngka(event)">
+                                            placeholder="Dzikir dalam jumlah menit.." onkeypress="return hanyaAngka(event)">
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -600,7 +653,6 @@
 
                                     <div class="col-md-6">
                                         <select class="form-control select2" style="width: 100%;" required="Minimal 0" name="buku_harian">
-                                            <option selected="selected" required="Minimal 0" name="buku_harian" value="{{ $nilaiPeriodik->buku_harian }}">{{ $nilaiPeriodik->buku_harian }}</option>
                                             <option name="buku_harian" value="1">1</option>
                                             <option name="buku_harian" value="2">2</option>
                                             <option name="buku_harian" value="3">3</option>
@@ -709,7 +761,8 @@
                                 <!-- /.row -->
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-success swalDefaultSuccessEdit">Simpan</button>
+                                <button type="submit" class="btn btn-success swalDefaultSuccessEdit" {{$opsi}}>{{$pesan}}</button>
+                                {{--  <button type="submit" class="btn btn-success swalDefaultSuccessEdit" {{$pesan}}>Simpan</button>  --}}
                             </div>
                             <!-- /.card-body -->
                             {{--  @endif

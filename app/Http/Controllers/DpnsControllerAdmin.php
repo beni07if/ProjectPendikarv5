@@ -226,6 +226,7 @@ class DpnsControllerAdmin extends Controller
         $objk->user_id = (int)$baris->user_id;
         $objk->keluarga = (int)$baris->keluarga;
         $objk->prodi = $baris->prodi;
+        $objk->jenis_kelamin = $baris->jenis_kelamin;
 
         //kalkulasi sholat
         $sholats = $baris->sholat_fardu;
@@ -275,6 +276,10 @@ class DpnsControllerAdmin extends Controller
 
         //end kalkulasi dzikir
 
+        // $jenisKelamin = $objk->jenis_kelamin;
+        // if (($jenisKelamin) = 'laki-laki'){
+
+        // }
         //kalkulasi tilawah
         $saritilawahs = $baris->tilawatil_quran;
             if (($saritilawahs) > 45){
@@ -298,8 +303,6 @@ class DpnsControllerAdmin extends Controller
             }else{
                 $saritilawah = 0;
             }
-
-
         //end kalkulasi tilawah
         $kehadiran = (( $baris->kehadiran)*10/100);
 
@@ -345,6 +348,7 @@ class DpnsControllerAdmin extends Controller
             $data_sementara->user_id = $diolah[$j]->user_id;
             $data_sementara->keluarga = $diolah[$j]->keluarga;
             $data_sementara->prodi = $diolah[$j]->prodi;
+            $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
 
         } else {
             if($data_sementara->user_id == $diolah[$j]->user_id){
@@ -355,6 +359,7 @@ class DpnsControllerAdmin extends Controller
             $data_sementara->user_id = $diolah[$j]->user_id;
             $data_sementara->keluarga = $diolah[$j]->keluarga;
             $data_sementara->prodi = $diolah[$j]->prodi;
+            $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
 
             } else {
             $data_sementara->dpna_hasil = $data_sementara->dpnaa / 16;
@@ -365,6 +370,7 @@ class DpnsControllerAdmin extends Controller
             $data_sementara->user_id = $diolah[$j]->user_id;
             $data_sementara->keluarga = $diolah[$j]->keluarga;
             $data_sementara->prodi = $diolah[$j]->prodi;
+            $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
             }
         }
         }
@@ -586,6 +592,7 @@ class DpnsControllerAdmin extends Controller
             'nama' => 'required',
             'nim' => 'required',
             'email' => 'required',
+            'jenis_kelamin' => 'required',
             'prodi' => 'required',
             'fakultas' => 'required',
             'no_hp' => 'required',
@@ -598,6 +605,7 @@ class DpnsControllerAdmin extends Controller
         $name = $request->input('name');
         $nim = $request->input('nim');
         $email = $request->input('email');
+        $jenis_kelamin = $request->input('jenis_kelamin');
         $prodi = $request->input('prodi');
         $fakultas = $request->input('fakultas');
         $no_hp = $request->input('no_hp');
@@ -611,6 +619,7 @@ class DpnsControllerAdmin extends Controller
             'name' => $name,
             'nim' => $nim,
             'email' => $email,
+            'jenis_kelamin' => $jenis_kelamin,
             'prodi' => $prodi,
             'fakultas' => $fakultas,
             'no_hp' => $no_hp,

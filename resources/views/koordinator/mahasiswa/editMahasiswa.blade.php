@@ -56,6 +56,14 @@
                                     <input type="text" class="form-control" id="nim" name="nim" value="{{ $mahasiswa->nim }}" required placeholder=value={{ $mahasiswa->nim }}>
                                   </div>
                                   <div class="form-group">
+                                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                                    <select class="form-control select2" required="Minimal 0" name="jenis_kelamin" id="jenis_kelamin">
+                                        <option selected value="{{$mahasiswa->jenis_kelamin}}">{{$mahasiswa->jenis_kelamin}}</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
                                     <label for="email">Email address</label>
                                     <input type="email" class="form-control" id="email" name="email" value="{{ $mahasiswa->email }}" required placeholder=value={{ $mahasiswa->email }}>
                                   </div>
@@ -143,7 +151,14 @@
 
 @endsection
 
-
+<script>
+function hanyaAngka(event) {
+        var angka = (event.which) ? event.which : event.keyCode
+        if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+        return false;
+        return true;
+    }
+</script>
 
 
 

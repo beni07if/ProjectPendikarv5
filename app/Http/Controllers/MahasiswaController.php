@@ -90,6 +90,7 @@ class MahasiswaController extends Controller
         $mahasiswa->name = $request->name;
         $mahasiswa->nim = $request->nim;
         $mahasiswa->email = $request->email;
+        $mahasiswa->jenis_kelamin = $request->jenis_kelamin;
         $mahasiswa->prodi = $request->prodi;
         $mahasiswa->fakultas = $request->fakultas;
         $mahasiswa->no_hp = $request->no_hp;
@@ -166,6 +167,7 @@ class MahasiswaController extends Controller
         $mahasiswa->name = $request->input('name');
         $mahasiswa->nim = $request->input('nim');
         $mahasiswa->email = $request->input('email');
+        $mahasiswa->jenis_kelamin = $request->input('jenis_kelamin');
         $mahasiswa->fakultas = $request->input('fakultas');
         $mahasiswa->prodi = $request->input('prodi');
         $mahasiswa->no_hp = $request->input('no_hp');
@@ -196,6 +198,7 @@ class MahasiswaController extends Controller
         $mahasiswa->name = $request->input('name');
         $mahasiswa->nim = $request->input('nim');
         $mahasiswa->email = $request->input('email');
+        $mahasiswa->jenis_kelamin = $request->input('jenis_kelamin');
         $mahasiswa->fakultas = $request->input('fakultas');
         $mahasiswa->prodi = $request->input('prodi');
         $mahasiswa->no_hp = $request->input('no_hp');

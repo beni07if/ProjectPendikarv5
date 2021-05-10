@@ -27,6 +27,7 @@ class RegisterMahasiswaController extends Controller
         $mahasiswa->name = $request->name;
         $mahasiswa->nim = $request->nim;
         $mahasiswa->email = $request->email;
+        $mahasiswa->jenis_kelamin = $request->jenis_kelamin;
         $mahasiswa->prodi = $request->prodi;
         $mahasiswa->fakultas = $request->fakultas;
         $mahasiswa->no_hp = $request->no_hp;

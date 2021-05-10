@@ -63,6 +63,7 @@ Daftar Peserta Nilai Akhir (DNPA) Mahasiswa Tahun 2021/2022
                                     <th>Nama</th>
                                     <th>Keluarga</th>
                                     <th>Prodi</th>
+                                    <th>Jenis Kelamin</th>
                                     <th>DPNA</th>
                                     <th>Keterangan</th>
                                 </tr>
@@ -79,6 +80,7 @@ Daftar Peserta Nilai Akhir (DNPA) Mahasiswa Tahun 2021/2022
                                     <td> {{ $nilai->name}}</td>
                                     <td> Keluarga {{ $nilai->keluarga }}</td>
                                     <td> {{ $nilai->prodi }}</td>
+                                    <td> {{ $nilai->jenis_kelamin }}</td>
                                     <td>
                                         {{ ($nilai->dpna_hasil)}}
                                     </td>

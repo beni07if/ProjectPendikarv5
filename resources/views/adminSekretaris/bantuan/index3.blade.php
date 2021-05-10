@@ -1,5 +1,5 @@
 
-@extends('layouts.masterKoordinator')
+@extends('layouts.master')
 
 @section('navbarTitle2')
 <a href="#" class="nav-link">Home</a>
@@ -31,7 +31,7 @@
   </section>
 
   <!-- Main content -->
-<section class="content">
+  <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -44,10 +44,11 @@
                   <li class="nav-item"><a class="nav-link active" href="#simulasiPenilaian" data-toggle="tab">Simulasi Kegiatan Pendikar</a></li>
                   <li class="nav-item"><a class="nav-link" href="#komponenPenilaian" data-toggle="tab">Komponen Penilaian</a></li>
                   <li class="nav-item"><a class="nav-link" href="#rumusPenilaian" data-toggle="tab">Rumus Penilaian</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#nilaiPeriodik" data-toggle="tab">Nilai Periodik</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#dpnsDanDpna" data-toggle="tab">DPNS dan DPNA</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#pengaduan" data-toggle="tab">Pengaduan</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#keluarga" data-toggle="tab">Keluarga</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#nilaiPeriodik" data-toggle="tab">nilaiPeriodik</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#dpns" data-toggle="tab">dpns</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#dpna" data-toggle="tab">dpna</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#pengaduan" data-toggle="tab">pengaduan</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#keluarga" data-toggle="tab">keluarga</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -75,7 +76,7 @@
                       <h5><b>Komponen Penilaian</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/komponen-bobot-penilaian.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/komponen-penilaian.png') }}" alt="User profile picture">
                         <p></p>
                         </div>
                       </div>
@@ -105,89 +106,128 @@
                   <div class="tab-pane" id="rumusPenilaian">
                     <!-- Post -->
                     <div class="post">
-                      <h5><b>Rumus Penilaian</b></h5>
+                        <h5><b>Rumus Perhitungan DPNS</b> </h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
                         <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/rumus-perhitungan-nilai-periodik.png') }}" alt="User profile picture">
-                        <p></p>
+                        {{--  <p><b>Sholat fardhu </b></p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 35(pekan ke-1) + 30(pekan ke-2) + 25(pekan ke-3) + 20(pekan ke-4)</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 132(total) dibagi 4(pekan)</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 27,5</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 27,5 dikonversi menggunakan tabel konversi sholat, maka menghasilkan nilai <b>80</b></p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 80 x 10%</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = <b>8</b></p><br>
+
+                        <p><b>Dzikir </b></p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 100 (pekan ke-1) + 97 (pekan ke-2) + 98 (pekan ke-3) + 105 (pekan ke-4)</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 400(total) dibagi 4(pekan)</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 100</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 100 dikonversi menggunakan tabel konversi dzikir, maka menghasilkan nilai <b>80</b></p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = 80 x 10%</p><br>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; = <b>8</b></p><br>  --}}
                         </div>
                       </div>
                       <!-- /.user-block -->
-
-                      <h5><b>Simulasi Perhitungan DPNS</b></h5>
+                      <h5><b>Simulasi Perhitungan DPNS</b> </h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
                         <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/simulasi-penilaian-dpns.png') }}" alt="User profile picture">
-                        <p></p>
+                        <p>
+                        nilai periodik
+                      </p>
                         </div>
                       </div>
                       <!-- /.user-block -->
                     </div>
                     <!-- /.post -->
-
                   </div>
 
-                  <div class="tab-pane" id="nilaiPeriodik">
-                    <!-- Post -->
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="nilaiPeriodik"
                     <div class="post">
-                      <h5><b>Nilai Periodik</b></h5>
+                        <h5>Nilai Periodik</h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/nilaiPeriodikMhs.png') }}" alt="User profile picture">
-                        <ul>
+                        <img id="nilaiPeriodik" src="{{ asset('assets/images/panduanMhs/nilaiPeriodik.png') }}" alt="User profile picture">
+                        <p>
+                          <ul>
                             <li>Nilai Periodik adalah rekap nilai mahasiswa setiap pertemuan per-pekan.</li>
                             <li>Mahasiswa melaporkan aktivitas  selama satu pekan kepada sekretaris seperti sholat, dzikir, saritilawah, membaca al-quran, dan buku harian. </li>
                             <li>Mahasiswa yang bertugas sebagai sekretaris akan menginputkan nilai/aktivitas mahasiswa selama satu pekan ke dalam sistem.</li>
-
+                            <li></li>
                           </ul>
+                        </p>
                         </div>
                       </div>
                       <!-- /.user-block -->
                     </div>
                     <!-- /.post -->
-
                   </div>
-
-                  <div class="tab-pane" id="dpnsDanDpna">
+                  <div class="tab-pane" id="pengaduan"
+                    <div class="post">
+                        <h5>Pengaduaannn</h5>
+                      <div class="card-body box-profile">
+                        <div class="text-align-left">
+                        <img id="pengaduan" src="{{ asset('assets/images/panduanMhs/nilaiPeriodik.png') }}" alt="User profile picture">
+                        <p>
+                          <ul>
+                            <li>Nilai Periodik adalah rekap nilai mahasiswa setiap pertemuan per-pekan.</li>
+                            <li>Mahasiswa melaporkan aktivitas  selama satu pekan kepada sekretaris seperti sholat, dzikir, saritilawah, membaca al-quran, dan buku harian. </li>
+                            <li>Mahasiswa yang bertugas sebagai sekretaris akan menginputkan nilai/aktivitas mahasiswa selama satu pekan ke dalam sistem.</li>
+                            <li></li>
+                          </ul>
+                        </p>
+                        </div>
+                      </div>
+                      <!-- /.user-block -->
+                    </div>
+                    <!-- /.post -->
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="dpns">
                     <!-- Post -->
                     <div class="post">
-                      <h5><b>DPNS</b></h5>
+                        <h5>Info DPNS</h5>
                       <div class="card-body box-profile">
-                        <div class="text-align-left">
+                        <div class="text-center">
                         <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/dpnsMhs.png') }}" alt="User profile picture">
                         <p>
-                            DPNS (Data Peserta Nilai Sementara) adalah nilai sementara mahasiswa. <br>
-                            DPNS 1 merupakan akumulasi nilai periodik mahasiswa satu bulan pertama yang terdiri dari 4 pekan. <br>
-                            DPNS 2 merupakan akumulasi nilai periodik mahasiswa dua bulan berikutnya yang terdiri dari 8 pekan. <br>
-                            DPNS 3 merupakan akumulasi nilai periodik mahasiswa tiga bulan berikutnya yang terdiri dari 12 pekan.
-                        </p>
-                        </div>
-                      </div>
-                      <!-- /.user-block -->
-                      <h5><b>DPNA</b></h5>
-                      <div class="card-body box-profile">
-                        <div class="text-align-left">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/dpnsMhs.png') }}" alt="User profile picture">
-                        <p>
-                            DPNA (Data Peserta Nilai Akhir) adalah nilai akhir mahasiswa dalam mengikuti program PENDIKAR UNTAN yang merupakan akumulasi semua nilai periodik sebanyak maksimal 16 pekan.
-                        </p>
+                        dpns
+                      </p>
                         </div>
                       </div>
                       <!-- /.user-block -->
                     </div>
                     <!-- /.post -->
                   </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="dpna">
+                    <!-- Post -->
+                    <div class="post">
+                        <h5>Info DPNA</h5>
+                      <div class="card-body box-profile">
+                        <div class="text-center">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/dpnaMhs.png') }}" alt="User profile picture">
+                        <p>
+                        dpna
+                      </p>
+                        </div>
+                      </div>
+                      <!-- /.user-block -->
+                    </div>
+                    <!-- /.post -->
 
+                  </div>
+                  <!-- /.tab-pane -->
                   <div class="tab-pane" id="pengaduan">
                     <!-- Post -->
                     <div class="post">
-                      <h5><b>Pengaduan</b></h5>
+                        <h5>Menu Pengaduan</h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
                         <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/pengaduanMhs.png') }}" alt="User profile picture">
                         <p>
                             Menu pengaduan adalah fitur yang dapat digunakan oleh mahasiswa untuk mengirimkan dan menerima pesan ke Koordinator umum PENDIKAR Pancasila UNTAN yaitu Pak Riadi Budiman ST.,MT. <br>
-                            Koordinator dapat mengirimkan pesan balasan pada menu ini.
                         </p>
                         </div>
                       </div>
@@ -196,20 +236,24 @@
                     <!-- /.post -->
 
                   </div>
+                  <!-- /.tab-pane -->
                   <div class="tab-pane" id="keluarga">
                     <!-- Post -->
                     <div class="post">
-                      <h5><b>Keluarga</b></h5>
+                        <h5>Menu Keluarga</h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
                         <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/daftarKeluargaMhs.png') }}" alt="User profile picture">
                         <p>
-                            <ul>
-                                <li>Keluarga adalah kumpulan dari beberapa mahasiswa yang satu kelompok dalam program PENDIKAR Pancasila UNTAN. </li>
-                                <li>Dalam menu keluarga menampilkan daftar mahasiswa yang satu keluarga dengan user yang sedang login.</li>
-                                <li>Pada menu keluarga mahasiswa dapat mengubah data pribadi kecuali NIM, keluarga, dan angkatan. Jika mahasiswa ingin mengubah ketiga data tersebut mereka harus menghubungi Pak Riadi Budiman. Beliau yang memiliki akses penuh terhadap sistem penilaian PENDIKAR Pancasila UNTAN. </li>
-                            </ul>
-                        </p>
+                          <ul>
+                            <li>Keluarga adalah kumpulan dari beberapa mahasiswa yang satu kelompok dalam program PENDIKAR Pancasila UNTAN. </li>
+                            <li>Dalam menu keluarga menampilkan daftar mahasiswa yang satu keluarga dengan user yang sedang login.</li>
+                            <li>Pada menu keluarga mahasiswa dapat mengubah data pribadi kecuali NIM, keluarga, dan angkatan. Jika mahasiswa ingin mengubah ketiga data tersebut mereka harus menghubungi Pak Riadi Budiman. Beliau yang memiliki akses penuh terhadap sistem penilaian PENDIKAR Pancasila UNTAN. </li>
+                          </ul>
+
+
+
+                      </p>
                         </div>
                       </div>
                       <!-- /.user-block -->
@@ -217,6 +261,7 @@
                     <!-- /.post -->
 
                   </div>
+                  <!-- /.tab-pane -->
 
                 </div>
                 <!-- /.tab-content -->

@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Keluarga</h1>
+                    <h1>Detail Mahasiswa</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -55,6 +55,14 @@
                                     <input type="text" class="form-control" id="nim" name="nim" {{$disabled}} value="{{ $mahasiswa->nim }}" required placeholder=value={{ $mahasiswa->nim }} readonly>
                                   </div>
                                   <div class="form-group">
+                                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                                    <select class="form-control select2" required="Minimal 0" name="jenis_kelamin" id="jenis_kelamin">
+                                        <option selected value="{{$mahasiswa->jenis_kelamin}}">{{$mahasiswa->jenis_kelamin}}</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
                                     <label for="email">Email address</label>
                                     <input type="email" class="form-control" id="email" name="email" {{$disabled}} value="{{ $mahasiswa->email }}" required placeholder=value={{ $mahasiswa->email }}>
                                   </div>
@@ -68,7 +76,7 @@
                                   </div>
                                   <div class="form-group">
                                     <label for="no_hp">Nomor HP</label>
-                                    <input type="text" class="form-control" id="no_hp" name="no_hp" {{$disabled}} value="{{ $mahasiswa->no_hp }}" required placeholder={{ $mahasiswa->no_hp }}>
+                                    <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="no_hp" name="no_hp" {{$disabled}} value="{{ $mahasiswa->no_hp }}" required placeholder={{ $mahasiswa->no_hp }}>
                                   </div>
                                   <div class="form-group">
                                     <label for="keluarga">Keluarga</label>
@@ -89,7 +97,7 @@
                                   <div class="form-group">
                                     <label for="periode">Periode</label>
                                     @if (Auth::check())
-                                    <input type="text" class="form-control" id="periode" {{$disabled}} value="{{ $mahasiswa->periode }}" name="periode" required placeholder={{ $mahasiswa->periode }} readonly>
+                                    <input type="text" class="form-control" onkeypress="return hanyaAngka(event)" id="periode" {{$disabled}} value="{{ $mahasiswa->periode }}" name="periode" required placeholder={{ $mahasiswa->periode }} readonly>
 
                                     @endif
                                   </div>
@@ -137,7 +145,14 @@
 
 @endsection
 
-
+<script>
+        function hanyaAngka(event) {
+                var angka = (event.which) ? event.which : event.keyCode
+                if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+                return false;
+                return true;
+            }
+        </script>
 
 
 

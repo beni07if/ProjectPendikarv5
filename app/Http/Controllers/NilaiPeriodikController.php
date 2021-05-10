@@ -174,7 +174,14 @@ class NilaiPeriodikController extends Controller
             $opsi = 'disabled';
             $pesan = 'Hanya Sekretaris yang dapat mengubah..';
         }
-        return view('adminSekretaris.nilaiPeriodik.edit', compact('pesan', 'nilaiPeriodik', 'mahasiswa', 'opsi'));
+
+        if (Auth::user()->jenis_kelamin == 'laki-laki') {
+            return view('adminSekretaris.nilaiPeriodik.editNPIkhwan', compact('pesan', 'nilaiPeriodik', 'mahasiswa', 'opsi'));
+        }else{
+            return view('adminSekretaris.nilaiPeriodik.edit', compact('pesan', 'nilaiPeriodik', 'mahasiswa', 'opsi'));
+        }
+
+
     }
 
     //nilai periodik detail anggota
@@ -240,6 +247,11 @@ class NilaiPeriodikController extends Controller
         // $nilaiPeriodik = NilaiPeriodik::all();
         // $nilaiPeriodik = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->get();
         $nilaiPeriodik = NilaiPeriodik::where('user_id', auth()->user()->id)->orderBy('tanggal', 'DESC')->get();
-        return view('adminSekretaris.nilaiPeriodik.tambahNilaiPeriodik', compact('mahasiswa', 'user', 'nilaiPeriodik'));
+
+        if (Auth::user()->jenis_kelamin == 'laki-laki') {
+            return view('adminSekretaris.nilaiPeriodik.tambahNilaiPeriodikIkhwan', compact('mahasiswa', 'user', 'nilaiPeriodik'));
+        }else{
+            return view('adminSekretaris.nilaiPeriodik.tambahNilaiPeriodik', compact('mahasiswa', 'user', 'nilaiPeriodik'));
+        }
     }
 }

@@ -94,6 +94,19 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="jenis_kelamin" class="col-md-4 col-form-label text-md-right">{{ __('jenis_kelamin') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="jenis_kelamin" type="text" value="{{ $mhs->jenis_kelamin }}" class="form-control @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin" required  readonly>
+
+                            @error('jenis_kelamin')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="prodi" class="col-md-4 col-form-label text-md-right">{{ __('Prodi') }}</label>
 
                         <div class="col-md-6">
