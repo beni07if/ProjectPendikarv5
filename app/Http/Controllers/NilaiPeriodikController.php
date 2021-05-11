@@ -243,7 +243,7 @@ class NilaiPeriodikController extends Controller
         $user = $this->middleware('auth');
         // $user = $this->middleware('auth:mahasiswa');
         // $eloquent = Mahasiswa::where(auth()->user()->keluarga)->get();
-        $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->get();
+        $mahasiswa = User::where('keluarga', auth()->user()->keluarga)->where('periode', auth()->user()->periode)->where('role', '!=', 'tutor')->get();
         // $nilaiPeriodik = NilaiPeriodik::all();
         // $nilaiPeriodik = NilaiPeriodik::where('keluarga', auth()->user()->keluarga)->get();
         $nilaiPeriodik = NilaiPeriodik::where('user_id', auth()->user()->id)->orderBy('tanggal', 'DESC')->get();

@@ -61,7 +61,7 @@
                                     <th>Nama</th>
                                     <th>Prodi</th>
                                     <th>Fakultas</th>
-                                    <th>Jabatan</th>
+                                    <th>Role</th>
                                     <th>Nomor HP</th>
                                     <th>Action</th>
                                 </tr>

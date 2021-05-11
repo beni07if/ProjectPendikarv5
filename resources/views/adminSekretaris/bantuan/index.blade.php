@@ -186,7 +186,7 @@
                         <div class="text-align-left">
                         <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/pengaduanMhs.png') }}" alt="User profile picture">
                         <p>
-                            Menu pengaduan adalah fitur yang dapat digunakan oleh mahasiswa untuk mengirimkan dan menerima pesan ke Koordinator umum PENDIKAR Pancasila UNTAN yaitu Pak Riadi Budiman ST.,MT. <br>
+                            Menu pengaduan adalah fitur yang dapat digunakan oleh mahasiswa untuk mengirimkan dan menerima pesan ke Koordinator umum PENDIKAR Pancasila UNTAN. <br>
                         </p>
                         </div>
                       </div>
@@ -206,7 +206,7 @@
                             <ul>
                                 <li>Keluarga adalah kumpulan dari beberapa mahasiswa yang satu kelompok dalam program PENDIKAR Pancasila UNTAN. </li>
                                 <li>Dalam menu keluarga menampilkan daftar mahasiswa yang satu keluarga dengan user yang sedang login.</li>
-                                <li>Pada menu keluarga mahasiswa dapat mengubah data pribadi kecuali NIM, keluarga, dan angkatan. Jika mahasiswa ingin mengubah ketiga data tersebut mereka harus menghubungi Pak Riadi Budiman. Beliau yang memiliki akses penuh terhadap sistem penilaian PENDIKAR Pancasila UNTAN. </li>
+                                <li>Pada menu keluarga mahasiswa dapat mengubah data pribadi kecuali NIM, keluarga, dan angkatan. Jika mahasiswa ingin mengubah ketiga data tersebut mereka harus menghubungi Koordinator umum PENDIKAR. Beliau yang memiliki akses penuh terhadap sistem penilaian PENDIKAR Pancasila UNTAN. </li>
                             </ul>
                         </p>
                         </div>
@@ -233,7 +233,6 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
 
 @endsection
 

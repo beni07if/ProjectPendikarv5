@@ -181,7 +181,7 @@ class MahasiswaController extends Controller
         // $mahasiswa->foto = $request->file('foto');
         $mahasiswa->periode = $request->input('periode');
         $mahasiswa->role = $request->input('role');
-        $mahasiswa->password = bcrypt($request->input('password'));
+        // $mahasiswa->password = bcrypt($request->input('password'));
 
         $mahasiswa->save($request->all());
         return redirect('/keluarga')->with('message', 'Data Mahasiswa Berhasil Diubah..');

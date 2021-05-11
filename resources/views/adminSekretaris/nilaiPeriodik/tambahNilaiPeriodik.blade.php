@@ -545,10 +545,11 @@
                                 <div class="col-md-6">
                                     <select class="form-control select2" required="Minimal 0" name="sholat_fardu"
                                         style="width: 100%;">
-                                        <option selected="selected" value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
+                                        <option selected="selected" value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                         <option value="5">5</option>
                                         <option value="6">6</option>
                                         <option value="7">7</option>
