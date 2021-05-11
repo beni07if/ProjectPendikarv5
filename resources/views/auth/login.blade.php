@@ -33,6 +33,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login_v18/css/util.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login_v18/css/main.css') }}">
     <!--===============================================================================================-->
+
+    <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
 </head>
 
 <body style="background-color: #666666;">
@@ -77,8 +84,9 @@
                         <button class="login100-form-btn" type="submit">
                             Login
                         </button>
-                    </div>
-                    <a href="" data-toggle="modal" data-target=".bd-example-modal-sm">Register Sekretaris</a><br>
+                    </div><br>
+                    {{--  <a href="" data-toggle="modal" data-target=".bd-example-modal-sm">Register Sekretaris</a><br>  --}}
+                    <a href="" data-toggle="modal" data-target="#modal-default">Register Sekretaris</a><br>
 
                     <div class="text-center p-t-46 p-b-20">
                         <span class="txt2">
@@ -105,15 +113,17 @@
         </div>
     </div>
 
-    <!-- Register Sekretaris -->
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Register Sekretaris
-                        <div class="modal-body">
-                            <form method="POST" action="{{ route('register.mahasiswa.store') }} "
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Register Sekretaris</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="{{ route('register.mahasiswa.store') }} "
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
@@ -179,8 +189,8 @@
                                             <option disabled value="2014">2014</option>
                                             <option disabled value="2015">2015</option>
                                             <option disabled value="2016">2016</option>
-                                            <option disabled value="2017">2017</option>
-                                            <option disabled value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
                                             <option value="2019">2019</option>
                                             <option value="2020">2020</option>
                                         </select>
@@ -202,7 +212,7 @@
                                             name="password_confirmation" required autocomplete="new-password">
                                     </div>
                                     <div>
-                                        <button type="submit" class="btn btn-primary">Register</button>
+                                        <button type="submit" class="btn btn-success">Register</button>
                                     </div>
                                     {{--  <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -218,14 +228,12 @@
                                     <a href="" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Register Sekretaris</a>
                                 </div>  --}}
                             </form>
-                        </div>
-                        <!-- <div class="modal-footer">
-                        </div> -->
-                </div>
-            </div>
+          </div>
+          <!-- /.modal-content -->
         </div>
-    </div>
-
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
         <!--===============================================================================================-->
         <script src="{{ asset('assets/Login_v18/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
@@ -244,6 +252,8 @@
         <!--===============================================================================================-->
         <script src="{{ asset('assets/Login_v18/js/main.js') }}"></script>
 
+        <script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+
         <script>
         function hanyaAngka(event) {
                 var angka = (event.which) ? event.which : event.keyCode
@@ -251,6 +261,14 @@
                 return false;
                 return true;
             }
+        </script>
+
+        <script src="{{ asset ('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+
+        <script>
+        $(function () {
+        bsCustomFileInput.init();
+        });
         </script>
 
 </body>
