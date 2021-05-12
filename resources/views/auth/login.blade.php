@@ -35,11 +35,12 @@
     <!--===============================================================================================-->
 
     <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
 </head>
 
 <body style="background-color: #666666;">
@@ -49,8 +50,8 @@
             <div class="wrap-login100">
                 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                     @csrf
-                    <span class="login100-form-title p-b-43">
-                        SISTEM PENILAIAN PENDIKAR<br>Login by Mahasiswa
+                    <span class="login100-form-title p-b-33">
+                        SISTEM PENILAIAN PENDIKAR<br>Login by <b>Sekretaris/Mahasiswa</b>
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
@@ -87,10 +88,11 @@
                     </div><br>
                     {{--  <a href="" data-toggle="modal" data-target=".bd-example-modal-sm">Register Sekretaris</a><br>  --}}
                     <a href="" data-toggle="modal" data-target="#modal-default">Register Sekretaris</a><br>
+                    <a href="" data-toggle="modal" data-target="#modal-registrasi-mahasiswa">Register Mahasiswa</a><br>
 
                     <div class="text-center p-t-46 p-b-20">
                         <span class="txt2">
-                            login by (mahasiswa / koordinator)
+                            login by <br> (mahasiswa / koordinator)
                         </span>
                     </div>
 
@@ -115,125 +117,279 @@
 
     <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Register Sekretaris</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="POST" action="{{ route('register.mahasiswa.store') }} "
-                                enctype="multipart/form-data">
-                                @csrf
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="name">Nama</label>
-                                        <input type="text" class="form-control" id="name" name="name" required
-                                            placeholder="Masukan Nama..">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Register Sekretaris</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{{ route('register.mahasiswa.store') }} " enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name">Nama</label>
+                                <input type="text" class="form-control" id="name" name="name" required
+                                    placeholder="Masukan Nama..">
+                            </div>
+                            <div class="form-group">
+                                <label for="nim">NIM</label>
+                                <input type="text" class="form-control" id="nim" name="nim" required
+                                    placeholder="Masukan NIM..">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" required
+                                    placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="jenis_kelamin">Jenis Kelamin</label>
+                                <select class="form-control select2" required="Minimal 0" name="jenis_kelamin"
+                                    id="jenis_kelamin">
+                                    <option value="laki-laki">Laki-laki</option>
+                                    <option value="perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fakultas">Fakultas</label>
+                                <input type="text" class="form-control" id="fakultas" name="fakultas" required
+                                    placeholder="Masukan Fakultas">
+                            </div>
+                            <div class="form-group">
+                                <label for="prodi">Program Studi</label>
+                                <input type="text" class="form-control" id="prodi" name="prodi" required
+                                    placeholder="Masukan Prodi..">
+                            </div>
+                            <div class="form-group">
+                                <label for="no_hp">Nomor HP</label>
+                                <input type="text" class="form-control" id="no_hp" name="no_hp"
+                                    onkeypress="return hanyaAngka(event)" required placeholder="">
+                            </div>
+                            {{--  <div class="form-group">
+                                <label for="keluarga">Keluarga</label>
+                                <input type="text" class="form-control" id="keluarga" name="keluarga"
+                                    onkeypress="return hanyaAngka(event)" required placeholder="Keluarga">
+                            </div>  --}}
+                            <div class="form-group">
+                                <label for="keluarga">Keluarga</label>
+                                <select class="form-control select2" required="Minimal 0" name="keluarga" id="keluarga">
+                                    <option value="003">003</option>
+                                    <option value="023">023</option>
+                                    <option value="067">067</option>
+                                    <option value="095">095</option>
+                                    <option value="120">120</option>
+                                    <option value="123">123</option>
+                                    <option value="125">125</option>
+                                    <option value="145">145</option>
+                                    <option value="189">189</option>
+                                    <option value="193">193</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto" class="form-control-label">Foto</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="foto" class="custom-file-input" required
+                                            placeholder="Masukkan foto"
+                                            oninvalid="this.setCustomValidity('Masukkan foto')"
+                                            oninput="this.setCustomValidity('')">
+                                        <label class="custom-file-label">Choose File</label>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="nim">NIM</label>
-                                        <input type="text" class="form-control" id="nim" name="nim" required
-                                            placeholder="Masukan NIM..">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email address</label>
-                                        <input type="email" class="form-control" id="email" name="email" required
-                                            placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jenis_kelamin">Jenis Kelamin</label>
-                                        <select class="form-control select2" required="Minimal 0" name="jenis_kelamin" id="jenis_kelamin">
-                                            <option value="laki-laki">Laki-laki</option>
-                                            <option value="perempuan">Perempuan</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="fakultas">Fakultas</label>
-                                        <input type="text" class="form-control" id="fakultas" name="fakultas" required
-                                            placeholder="Masukan Fakultas">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="prodi">Program Studi</label>
-                                        <input type="text" class="form-control" id="prodi" name="prodi" required
-                                            placeholder="Masukan Prodi..">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="no_hp">Nomor HP</label>
-                                        <input type="text" class="form-control" id="no_hp" name="no_hp" onkeypress="return hanyaAngka(event)" required
-                                            placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="keluarga">Keluarga</label>
-                                        <input type="text" class="form-control" id="keluarga" name="keluarga" onkeypress="return hanyaAngka(event)" required
-                                            placeholder="Keluarga">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="foto" class="form-control-label">Foto</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" name="foto" class="custom-file-input" required
-                                                    placeholder="Masukkan foto"
-                                                    oninvalid="this.setCustomValidity('Masukkan foto')"
-                                                    oninput="this.setCustomValidity('')">
-                                                <label class="custom-file-label">Choose File</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="periode">Angkatan</label>
-                                        <select class="form-control select2" required="Minimal 0" name="periode" id="periode">
-                                            <option disabled value="2012">2012</option>
-                                            <option disabled value="2013">2013</option>
-                                            <option disabled value="2014">2014</option>
-                                            <option disabled value="2015">2015</option>
-                                            <option disabled value="2016">2016</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2020">2020</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="role">Role</label>
-                                        <input type="text" class="form-control" id="role" name="role" value="sekretaris"
-                                            placeholder="sekretaris" readonly>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input id="password" type="password" class="form-control" name="password"
-                                            required autocomplete="new-password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password-confirm">Konfirmasi Password</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="periode">Angkatan</label>
+                                <select class="form-control select2" required="Minimal 0" name="periode" id="periode">
+                                    <option disabled value="2012">2012</option>
+                                    <option disabled value="2013">2013</option>
+                                    <option disabled value="2014">2014</option>
+                                    <option disabled value="2015">2015</option>
+                                    <option disabled value="2016">2016</option>
+                                    <option disabled value="2017">2017</option>
+                                    <option disabled value="2018">2018</option>
+                                    <option disabled value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <input type="text" class="form-control" id="role" name="role" value="sekretaris"
+                                    placeholder="sekretaris" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" class="form-control" name="password" required
+                                    autocomplete="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="password-confirm">Konfirmasi Password</label>
 
-                                        <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" required autocomplete="new-password">
-                                    </div>
-                                    <div>
-                                        <button type="submit" class="btn btn-success">Register</button>
-                                    </div>
-                                    {{--  <div class="form-check">
+                                <input id="password-confirm" type="password" class="form-control"
+                                    name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success">Register</button>
+                            </div>
+                            {{--  <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                   </div>  --}}
-                                </div>
-                                <!-- /.card-body -->
+                        </div>
+                        <!-- /.card-body -->
 
-                                {{--  <div class="card-footer">
+                        {{--  <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Register</button>
                                     <a href="" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Register Sekretaris</a>
                                 </div>  --}}
-                            </form>
-          </div>
-          <!-- /.modal-content -->
+                    </form>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
+        <!-- /.modal -->
+    </div>
+
+    <div class="modal fade" id="modal-registrasi-mahasiswa">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Register Mahasiswa</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{{ route('register.mahasiswa.store') }} " enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name">Nama</label>
+                                <input type="text" class="form-control" id="name" name="name" required
+                                    placeholder="Masukan Nama..">
+                            </div>
+                            <div class="form-group">
+                                <label for="nim">NIM</label>
+                                <input type="text" class="form-control" id="nim" name="nim" required
+                                    placeholder="Masukan NIM..">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" required
+                                    placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="jenis_kelamin">Jenis Kelamin</label>
+                                <select class="form-control select2" required="Minimal 0" name="jenis_kelamin"
+                                    id="jenis_kelamin">
+                                    <option value="laki-laki">Laki-laki</option>
+                                    <option value="perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fakultas">Fakultas</label>
+                                <input type="text" class="form-control" id="fakultas" name="fakultas" required
+                                    placeholder="Masukan Fakultas">
+                            </div>
+                            <div class="form-group">
+                                <label for="prodi">Program Studi</label>
+                                <input type="text" class="form-control" id="prodi" name="prodi" required
+                                    placeholder="Masukan Prodi..">
+                            </div>
+                            <div class="form-group">
+                                <label for="no_hp">Nomor HP</label>
+                                <input type="text" class="form-control" id="no_hp" name="no_hp"
+                                    onkeypress="return hanyaAngka(event)" required placeholder="">
+                            </div>
+                            {{--  <div class="form-group">
+                                <label for="keluarga">Keluarga</label>
+                                <input type="text" class="form-control" id="keluarga" name="keluarga"
+                                    onkeypress="return hanyaAngka(event)" required placeholder="Keluarga">
+                            </div>  --}}
+                            <div class="form-group">
+                                <label for="keluarga">Keluarga</label>
+                                <select class="form-control select2" required="Minimal 0" name="keluarga" id="keluarga">
+                                    <option value="003">003</option>
+                                    <option value="023">023</option>
+                                    <option value="067">067</option>
+                                    <option value="095">095</option>
+                                    <option value="120">120</option>
+                                    <option value="123">123</option>
+                                    <option value="125">125</option>
+                                    <option value="145">145</option>
+                                    <option value="189">189</option>
+                                    <option value="193">193</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto" class="form-control-label">Foto</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="foto" class="custom-file-input" required
+                                            placeholder="Masukkan foto"
+                                            oninvalid="this.setCustomValidity('Masukkan foto')"
+                                            oninput="this.setCustomValidity('')">
+                                        <label class="custom-file-label">Choose File</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="periode">Angkatan</label>
+                                <select class="form-control select2" required="Minimal 0" name="periode" id="periode">
+                                    <option disabled value="2012">2012</option>
+                                    <option disabled value="2013">2013</option>
+                                    <option disabled value="2014">2014</option>
+                                    <option disabled value="2015">2015</option>
+                                    <option disabled value="2016">2016</option>
+                                    <option disabled value="2017">2017</option>
+                                    <option disabled value="2018">2018</option>
+                                    <option disabled value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <input type="text" class="form-control" id="role" name="role" value="mahasiswa"
+                                    placeholder="mahasiswa" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" class="form-control" name="password" required
+                                    autocomplete="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="password-confirm">Konfirmasi Password</label>
+
+                                <input id="password-confirm" type="password" class="form-control"
+                                    name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success">Register</button>
+                            </div>
+                            {{--  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>  --}}
+                        </div>
+                        <!-- /.card-body -->
+
+                        {{--  <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                    <a href="" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Register Sekretaris</a>
+                                </div>  --}}
+                    </form>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
 
         <!--===============================================================================================-->
         <script src="{{ asset('assets/Login_v18/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
@@ -255,7 +411,7 @@
         <script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 
         <script>
-        function hanyaAngka(event) {
+            function hanyaAngka(event) {
                 var angka = (event.which) ? event.which : event.keyCode
                 if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
                 return false;
@@ -266,7 +422,7 @@
         <script src="{{ asset ('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 
         <script>
-        $(function () {
+            $(function () {
         bsCustomFileInput.init();
         });
         </script>
