@@ -174,8 +174,14 @@
                             <div class="form-group">
                                 <label for="keluarga">Keluarga</label>
                                 <select class="form-control select2" required="Minimal 0" name="keluarga" id="keluarga">
+                                    <option value="001">001</option>
                                     <option value="003">003</option>
+                                    <option value="007">007</option>
                                     <option value="023">023</option>
+                                    <option value="026">026</option>
+                                    <option value="036">036</option>
+                                    <option value="062">062</option>
+                                    <option value="065">065</option>
                                     <option value="067">067</option>
                                     <option value="095">095</option>
                                     <option value="120">120</option>
@@ -312,8 +318,14 @@
                             <div class="form-group">
                                 <label for="keluarga">Keluarga</label>
                                 <select class="form-control select2" required="Minimal 0" name="keluarga" id="keluarga">
+                                    <option value="001">001</option>
                                     <option value="003">003</option>
+                                    <option value="007">007</option>
                                     <option value="023">023</option>
+                                    <option value="026">026</option>
+                                    <option value="036">036</option>
+                                    <option value="062">062</option>
+                                    <option value="065">065</option>
                                     <option value="067">067</option>
                                     <option value="095">095</option>
                                     <option value="120">120</option>
