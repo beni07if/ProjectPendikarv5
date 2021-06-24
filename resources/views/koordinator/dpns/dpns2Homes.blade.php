@@ -1,15 +1,15 @@
 @extends('layouts.masterKoordinator')
 
 @section('dpnaHeaderExport')
-Daftar Peserta Nilai Akhir (DPNA) Mahasiswa Tahun 2021/2022
+Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
 @endsection
 
 @section('navbarTitle2')
-<a href="#" class="nav-link">DPNA</a>
+<a href="#" class="nav-link">DPNS 2</a>
 @endsection
 
 @section('breadcrumb')
-<a href="#" class="nav-link">Sistem Penilaian Pendikar / DPNA</a>
+<a href="#" class="nav-link">Sistem Penilaian Pendikar / DPNS 2</a>
 @endsection
 
 @section('content')
@@ -21,12 +21,12 @@ Daftar Peserta Nilai Akhir (DPNA) Mahasiswa Tahun 2021/2022
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>DPNA</h1>
+                    <h1>DPNS 2</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('mahasiswa.home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">DPNA</li>
+                        <li class="breadcrumb-item active">DPNS 2</li>
                     </ol>
                 </div>
             </div>
@@ -64,7 +64,7 @@ Daftar Peserta Nilai Akhir (DPNA) Mahasiswa Tahun 2021/2022
                                     <th>Keluarga</th>
                                     <th>Prodi</th>
                                     <th>Jenis Kelamin</th>
-                                    <th>DPNA</th>
+                                    <th>DPNS 2</th>
                                     <th>Keterangan</th>
                                 </tr>
                             </thead>
@@ -86,7 +86,7 @@ Daftar Peserta Nilai Akhir (DPNA) Mahasiswa Tahun 2021/2022
                                     </td>
                                     <td>
                                         <a href="{{ route('dpnaDetailKoordinator', $nilai->user_id) }}" type="button"
-                                            class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Detail DPNA</a>
+                                            class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Detail DPNS 2</a>
 
                                     </td>
                                 </tr>

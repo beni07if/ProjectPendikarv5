@@ -444,6 +444,13 @@ class AdminController extends Controller
         return view('koordinator.mahasiswa.daftarMahasiswa', compact('mahasiswa', 'user'));
     }
 
+    public function hapusDataMhs($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('daftar-semua-mahasiswa')->with('success', 'Mahasiswa Berhasil Dihapus..');
+    }
+
     public function editDataKoordinator()
     {
         $user = $this->middleware('auth:admin');

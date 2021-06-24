@@ -273,6 +273,11 @@ Route::get('dpnaDetail/{id}', 'DpnsControllerAdmin@dpnaDetail')->name('dpnaDetai
 Route::get('detailNPDpna/{id}', 'DpnsControllerAdmin@detailNPDpna')->name('detailNPDpna');
 Route::get('dpnaSortByKeluarga/{keluarga}', 'DpnsControllerAdmin@dpnaSortByKeluarga')->name('dpnaSortByKeluarga');
 
+Route::get('dpns1Homes', 'DpnsControllerAdmin@dpns1Homes')->name('dpns1HomesController');
+Route::get('dpns2Homes', 'DpnsControllerAdmin@dpns2Homes')->name('dpns2HomesController');
+Route::get('dpns3Homes', 'DpnsControllerAdmin@dpns3Homes')->name('dpns3HomesController');
+
+
 Route::get('pengaduanListKoordinator', 'PengaduanControllerAdmin@index')->name('pengaduanListKoordinator');
 Route::get('pesan-personal-mahasiswa/{user_id}', 'PengaduanControllerAdmin@pesanPersonalVsKoor')->name('pesanPersonalVsKoor');
 Route::get('pesanVsKoor/{id}', 'PengaduanControllerAdmin@pesanVsKoor')->name('pesanVsKoor');
@@ -285,6 +290,7 @@ Route::get('daftar-mahasiswa-berdasarkan-keluarga/{id}', 'AdminController@daftar
 Route::get('detail-mahasiswa/{id}', 'AdminController@detailMhs')->name('detailMhs');
 Route::get('edit-detail-mahasiswa/{id}', 'AdminController@editDetailMhs')->name('editDetailMhs');
 Route::post('update-detail-mahasiswa/{id}', 'AdminController@updateMhs')->name('updateMhs');
+Route::post('/hapus-data-mahasiswa/{id}', 'AdminController@hapusDataMhs')->name('hapusDataMhs');
 // end Koordinator
 
 // Route::get('pesan-personal-mhs/{user_id}', 'MahasiswaController@pesanPersonalVsMhs')->name('pesanPersonalVsMhs');

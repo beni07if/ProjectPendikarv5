@@ -71,16 +71,20 @@
                                 <?php $no++; ?>
                                 <tr>
                                     <td>{{ $no }}</td>
-                                    <td>{{ $mhs->name }}</td>
+                                    <td>{{ $mhs->name }} <br><p class="text-muted">({{ $mhs->role }})</p></td>
                                     <td>{{ $mhs->prodi }}</td>
                                     <td>{{ $mhs->fakultas }}</td>
                                     <td>{{ $mhs->keluarga }}</td>
                                     <td>{{ $mhs->no_hp }}</td>
                                     <td>
-                                        <a href="{{ route('detailMhs', $mhs->id) }}" type="button" class="btn btn-sm btn-info fas fa-eye">Detail</a>
+                                        <a href="{{ route('detailMhs', $mhs->id) }}" type="button" class="btn btn-xs btn-info"><i class="fas fa-eye"></i> Detail</a>
                                         {{--  <p class="btn btn-info btn-xs"><a href="{{ route('showNilaiPeriodik', $mhs->id) }}">view</p>
                                         <p class="btn btn-warning btn-xs"><a href="{{ route('editMahasiswa', $mhs->id) }}">edit</p>  --}}
                                         {{--  <p class="btn btn-danger btn-xs">delete</p>  --}}
+                                        <form action="{{ route('hapusDataMhs', $mhs->id)}}" method="post">
+                                            @csrf
+                                            <button class="btn btn-danger btn-xs swalDefaultDeleteMahasiswa" type="submit" ><i class="fas fa-trash"></i> Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

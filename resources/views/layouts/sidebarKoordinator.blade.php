@@ -56,19 +56,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('dpns1HomeKoordinator') }}" class="nav-link">
+                    <a href="{{ route('dpns1HomesController') }}" class="nav-link">
                     <i class="far fa-file-alt nav-icon"></i>
                     <p>DPNS 1</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dpns2HomeKoordinator') }}" class="nav-link">
+                    <a href="{{ route('dpns2HomesController') }}" class="nav-link">
                     <i class="far fa-file-alt nav-icon"></i>
                     <p>DPNS 2</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dpns3HomeKoordinator') }}" class="nav-link">
+                    <a href="{{ route('dpns3HomesController') }}" class="nav-link">
                     <i class="far fa-file-alt nav-icon"></i>
                     <p>DPNS 3</p>
                     </a>

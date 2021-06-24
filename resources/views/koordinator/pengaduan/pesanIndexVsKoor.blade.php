@@ -80,7 +80,7 @@
                                     {{--  <td></td>  --}}
                                     {{--  <td>{{ $pesan->no_hp }}</td>  --}}
                                     <td>
-                                        <a href="{{ route('pesanVsKoor', $pesan->id) }}" class="btn btn-sm btn-info fas fa-edit">Balas</a>
+                                        <a href="{{ route('pesanVsKoor', $pesan->id) }}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Balas</a>
                                         {{--  <a href="{{ route('pesanPersonalVsKoor', $pesan->user_id) }}" class="btn btn-sm btn-info">Detail</a>  --}}
                                         {{--  <p class="btn btn-info btn-xs"><a href="{{ route('showNilaiPeriodik', $pesan->id) }}">view</p>  --}}
                                         {{--  <p class="btn btn-warning btn-xs"><a href="{{ route('editNilaiPeriodik', $pesan->id) }}">edit</p>  --}}

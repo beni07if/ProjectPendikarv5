@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-success fas fa-sent swalDefaultSuccessPesanVsKoor">Kirim</button>
+                            <button type="submit" class="btn btn-success swalDefaultSuccessPesanVsKoor"><i class="fa fa-send"></i> Kirim</button>
                         </div>
                     </div>
 

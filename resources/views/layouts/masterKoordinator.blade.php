@@ -143,7 +143,7 @@
   $(document).ready(function () {
       $('#example1').DataTable({
           dom: 'Bfrtip',
-          buttons: ['excel', 'pdf', ]
+          buttons: ['excel',  ]
          // buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
       });
   });
