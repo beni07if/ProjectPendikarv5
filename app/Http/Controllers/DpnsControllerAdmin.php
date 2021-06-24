@@ -220,7 +220,7 @@ class DpnsControllerAdmin extends Controller
         $diolah = [];
 
         foreach ($data as $baris) {
-
+        // echo $baris->name;
         $objk= (object)[];
         $objk->name = $baris->name;
         $objk->user_id = (int)$baris->user_id;
@@ -341,40 +341,55 @@ class DpnsControllerAdmin extends Controller
         $data_sementara = (object)[];
 
         for ($j = 0; $j < count($diolah); $j++) {
-
-        if($j == 0){
-            $data_sementara->name = $diolah[$j]->name;
-            $data_sementara->dpnaa = $diolah[$j]->dpnaa;
-            $data_sementara->user_id = $diolah[$j]->user_id;
-            $data_sementara->keluarga = $diolah[$j]->keluarga;
-            $data_sementara->prodi = $diolah[$j]->prodi;
-            $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
-
-        } else {
-            if($data_sementara->user_id == $diolah[$j]->user_id){
-            $prev_dpna = $data_sementara->dpnaa;
-            $data_sementara = (object)[];
-            $data_sementara->name = $diolah[$j]->name;
-            $data_sementara->dpnaa = $diolah[$j]->dpnaa + $prev_dpna;
-            $data_sementara->user_id = $diolah[$j]->user_id;
-            $data_sementara->keluarga = $diolah[$j]->keluarga;
-            $data_sementara->prodi = $diolah[$j]->prodi;
-            $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
+        // echo count($diolah);
+        // echo $diolah[$j]->name;
+            if($j == 0){
+                $data_sementara->name = $diolah[$j]->name;
+                $data_sementara->dpnaa = $diolah[$j]->dpnaa;
+                $data_sementara->user_id = $diolah[$j]->user_id;
+                $data_sementara->keluarga = $diolah[$j]->keluarga;
+                $data_sementara->prodi = $diolah[$j]->prodi;
+                $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
 
             } else {
-            $data_sementara->dpna_hasil = $data_sementara->dpnaa / 16;
-            array_push($data_akhir, $data_sementara);
-            $data_sementara = (object)[];
-            $data_sementara->name = $diolah[$j]->name;
-            $data_sementara->dpnaa = $diolah[$j]->dpnaa;
-            $data_sementara->user_id = $diolah[$j]->user_id;
-            $data_sementara->keluarga = $diolah[$j]->keluarga;
-            $data_sementara->prodi = $diolah[$j]->prodi;
-            $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
-            }
-        }
-        }
 
+
+                if($data_sementara->user_id == $diolah[$j]->user_id){
+                    $prev_dpna = $data_sementara->dpnaa;
+                    $data_sementara = (object)[];
+                    $data_sementara->name = $diolah[$j]->name;
+                    $data_sementara->dpnaa = $diolah[$j]->dpnaa + $prev_dpna;
+                    $data_sementara->user_id = $diolah[$j]->user_id;
+                    $data_sementara->keluarga = $diolah[$j]->keluarga;
+                    $data_sementara->prodi = $diolah[$j]->prodi;
+                    $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
+
+                } else {
+                    $data_sementara->dpna_hasil = $data_sementara->dpnaa / 16;
+                    array_push($data_akhir, $data_sementara);
+                    $data_sementara = (object)[];
+                    $data_sementara->name = $diolah[$j]->name;
+                    $data_sementara->dpnaa = $diolah[$j]->dpnaa;
+                    $data_sementara->user_id = $diolah[$j]->user_id;
+                    $data_sementara->keluarga = $diolah[$j]->keluarga;
+                    $data_sementara->prodi = $diolah[$j]->prodi;
+                    $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
+                    // echo $j;
+                    // echo count($diolah)-1;
+                    // echo $j == count($diolah)-1;
+                    if($j == count($diolah)-1 ){
+                        $data_sementara->dpna_hasil = $data_sementara->dpnaa / 16;
+                        array_push($data_akhir, $data_sementara);
+                    }
+                }
+            }
+
+
+        }
+        // echo "\n\nData akhir:\n";
+        // foreach ($data_akhir as $data_akhirr) {
+        //     echo $data_akhirr->name;
+        // }
         // $mahasiswa = User::get();
         // foreach($mahasiswa as $mhs){
         //     $id_mhs = $mhs->id;

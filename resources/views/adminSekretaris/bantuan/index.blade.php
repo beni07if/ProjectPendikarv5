@@ -58,7 +58,7 @@
                         <h5><b>Simulasi Kegiatan Pendikar</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/simulasi-kegiatan-pendikar.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/simulasi-kegiatan-pendikar.PNG') }}" alt="User profile picture">
                         <p>
                         Simulasi Kegiatan Pendikar
                       </p>
@@ -75,7 +75,7 @@
                       <h5><b>Komponen Penilaian</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/komponen-bobot-penilaian.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/komponen-bobot-penilaian.PNG') }}" alt="User profile picture">
                         <p></p>
                         </div>
                       </div>
@@ -84,7 +84,7 @@
                       <h5><b>Tabel Konversi nilai Sholat</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/tabel-konversi-nilai-sholat.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/tabel-konversi-nilai-sholat.PNG') }}" alt="User profile picture">
                         <p></p>
                         </div>
                       </div>
@@ -93,7 +93,7 @@
                       <h5><b>Tabel Konversi nilai Tilawatil Quran</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/tabel-konversi-nilai-tilawatil-quran.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/tabel-konversi-nilai-tilawatil-quran.PNG') }}" alt="User profile picture">
                         <p></p>
                         </div>
                       </div>
@@ -108,7 +108,7 @@
                       <h5><b>Rumus Penilaian</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/rumus-perhitungan-nilai-periodik.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/rumus-perhitungan-nilai-periodik.PNG') }}" alt="User profile picture">
                         <p></p>
                         </div>
                       </div>
@@ -117,7 +117,7 @@
                       <h5><b>Simulasi Perhitungan DPNS</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-center">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/simulasi-penilaian-dpns.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/simulasi-penilaian-dpns.PNG') }}" alt="User profile picture">
                         <p></p>
                         </div>
                       </div>
@@ -133,7 +133,7 @@
                       <h5><b>Nilai Periodik</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/nilaiPeriodikMhs.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/nilaiPeriodikMhs.PNG') }}" alt="User profile picture">
                         <ul>
                             <li>Nilai Periodik adalah rekap nilai mahasiswa setiap pertemuan per-pekan.</li>
                             <li>Mahasiswa melaporkan aktivitas  selama satu pekan kepada sekretaris seperti sholat, dzikir, saritilawah, membaca al-quran, dan buku harian. </li>
@@ -154,7 +154,7 @@
                       <h5><b>DPNS</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/dpnsMhs.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/dpnsMhs.PNG') }}" alt="User profile picture">
                         <p>
                             DPNS (Data Peserta Nilai Sementara) adalah nilai sementara mahasiswa. <br>
                             DPNS 1 merupakan akumulasi nilai periodik mahasiswa satu bulan pertama yang terdiri dari 4 pekan. <br>
@@ -167,7 +167,7 @@
                       <h5><b>DPNA</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/dpnsMhs.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/dpnsMhs.PNG') }}" alt="User profile picture">
                         <p>
                             DPNA (Data Peserta Nilai Akhir) adalah nilai akhir mahasiswa dalam mengikuti program PENDIKAR UNTAN yang merupakan akumulasi semua nilai periodik sebanyak maksimal 16 pekan.
                         </p>
@@ -184,7 +184,7 @@
                       <h5><b>Pengaduan</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/pengaduanMhs.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/pengaduanMhs.PNG') }}" alt="User profile picture">
                         <p>
                             Menu pengaduan adalah fitur yang dapat digunakan oleh mahasiswa untuk mengirimkan dan menerima pesan ke Koordinator umum PENDIKAR Pancasila UNTAN. <br>
                         </p>
@@ -201,7 +201,7 @@
                       <h5><b>Keluarga</b></h5>
                       <div class="card-body box-profile">
                         <div class="text-align-left">
-                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/daftarKeluargaMhs.png') }}" alt="User profile picture">
+                        <img id="gambarPengaduan" src="{{ asset('assets/images/panduanMhs/daftarKeluargaMhs.PNG') }}" alt="User profile picture">
                         <p>
                             <ul>
                                 <li>Keluarga adalah kumpulan dari beberapa mahasiswa yang satu kelompok dalam program PENDIKAR Pancasila UNTAN. </li>
