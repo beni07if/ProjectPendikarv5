@@ -61,4 +61,17 @@ class AuthController extends Controller
         }
         return redirect('login')->with('sukses', 'Anda Telah Logout');
     }
+
+
+    public function getCountries()
+    {
+        $countries = DB::table('users')->pluck("name","id");
+        return view('koordinator.auth.login',compact('countries'));
+    }
+
+    public function getStates($id) 
+    {
+        $states = DB::table("states")->where("countries_id",$id)->pluck("name","id");
+        return json_encode($states);
+    }
 }
