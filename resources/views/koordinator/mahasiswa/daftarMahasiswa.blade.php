@@ -55,6 +55,7 @@
                                     {{--  <th>No</th>  --}}
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>NIM</th>
                                     <th>Prodi</th>
                                     <th>Fakultas</th>
                                     <th>Keluarga</th>
@@ -72,6 +73,7 @@
                                 <tr>
                                     <td>{{ $no }}</td>
                                     <td>{{ $mhs->name }} <br><p class="text-muted">({{ $mhs->role }})</p></td>
+                                    <td>{{ $mhs->nim }}</td>
                                     <td>{{ $mhs->prodi }}</td>
                                     <td>{{ $mhs->fakultas }}</td>
                                     <td>{{ $mhs->keluarga }}</td>
