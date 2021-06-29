@@ -35,18 +35,18 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        {{--  <a href="{{ route('dpns1ByProdi') }}" class="btn btn-info">Tambah Anggota Keluarga</a>  --}}
+                        {{-- <a href="{{ route('dpns1ByProdi') }}" class="btn btn-info">Tambah Anggota Keluarga</a> --}}
 
-                        {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Tambah Nilai Periodik</a>  --}}
-                        {{--  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
-                        {{--  <div class="card-body">
+                        {{-- <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">Tambah Nilai Periodik</a> --}}
+                        {{-- <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
+                        {{-- <div class="card-body">
 
                         </div>  --}}
-                    {{--  @if(session()->get('success'))
+                        {{-- @if(session()->get('success'))
                     <div class="alert alert-success">
                         {{ session()->get('success') }}
                     </div><br />
-                    @endif  --}}
+                    @endif --}}
                     <!-- /.card-header -->
                     <div class="card-body table-responsive">
 
@@ -56,83 +56,83 @@
                         @foreach($mhs->NilaiPeriodik as $nPeriodik)
                         <?php
                         //kalkulasi sholat
-                                $sholat = $nPeriodik->sholat_fardu;
-                            if (($sholat) > 32)
-                                $sholat = 100;
-                            elseif (($sholat) > 28)
+                        $sholat = $nPeriodik->sholat_fardu;
+                        if (($sholat) > 32)
+                            $sholat = 100;
+                        elseif (($sholat) > 28)
                             $sholat = 90;
-                            elseif (($sholat) > 25)
+                        elseif (($sholat) > 25)
                             $sholat = 80;
-                            elseif (($sholat) > 21)
+                        elseif (($sholat) > 21)
                             $sholat = 70;
-                            elseif (($sholat) > 18)
+                        elseif (($sholat) > 18)
                             $sholat = 60;
-                            elseif (($sholat) > 14)
+                        elseif (($sholat) > 14)
                             $sholat = 50;
-                            elseif (($sholat) > 11)
+                        elseif (($sholat) > 11)
                             $sholat = 40;
-                            elseif (($sholat) > 7)
+                        elseif (($sholat) > 7)
                             $sholat = 30;
-                            elseif (($sholat) > 4)
+                        elseif (($sholat) > 4)
                             $sholat = 20;
-                            elseif (($sholat) > 0)
+                        elseif (($sholat) > 0)
                             $sholat = 10;
-                            else
+                        else
                             $sholat = 0;
-                            // end kalkulasi sholat
+                        // end kalkulasi sholat
 
-                            //kalkulasi dzikir
-                            $dzikir = $nPeriodik->dzikir;
-                            if (($dzikir) > 105)
-                                $dzikir = 100;
-                            elseif (($dzikir) > 83)
+                        //kalkulasi dzikir
+                        $dzikir = $nPeriodik->dzikir;
+                        if (($dzikir) > 105)
+                            $dzikir = 100;
+                        elseif (($dzikir) > 83)
                             $dzikir = 80;
-                            elseif (($dzikir) > 62)
+                        elseif (($dzikir) > 62)
                             $dzikir = 60;
-                            elseif (($dzikir) > 41)
+                        elseif (($dzikir) > 41)
                             $dzikir = 40;
-                            elseif (($dzikir) > 20)
+                        elseif (($dzikir) > 20)
                             $dzikir = 20;
-                            elseif (($dzikir) > 0)
+                        elseif (($dzikir) > 0)
                             $dzikir = 10;
-                            else
+                        else
                             $dzikir = 0;
-                            //end kalkulasi dzikir
+                        //end kalkulasi dzikir
 
-                            //kalkulasi tilawah
-                            $saritilawah = $nPeriodik->tilawatil_quran;
-                            if (($saritilawah) > 45)
-                                $saritilawah = 100;
-                            elseif (($saritilawah) > 40)
+                        //kalkulasi tilawah
+                        $saritilawah = $nPeriodik->tilawatil_quran;
+                        if (($saritilawah) > 45)
+                            $saritilawah = 100;
+                        elseif (($saritilawah) > 40)
                             $saritilawah = 90;
-                            elseif (($saritilawah) > 35)
+                        elseif (($saritilawah) > 35)
                             $saritilawah = 80;
-                            elseif (($saritilawah) > 30)
+                        elseif (($saritilawah) > 30)
                             $saritilawah = 70;
-                            elseif (($saritilawah) > 25)
+                        elseif (($saritilawah) > 25)
                             $saritilawah = 60;
-                            elseif (($saritilawah) > 20)
+                        elseif (($saritilawah) > 20)
                             $saritilawah = 50;
-                            elseif (($saritilawah) > 15)
+                        elseif (($saritilawah) > 15)
                             $saritilawah = 40;
-                            elseif (($saritilawah) > 5)
+                        elseif (($saritilawah) > 5)
                             $saritilawah = 20;
-                            elseif (($saritilawah) > 0)
+                        elseif (($saritilawah) > 0)
                             $saritilawah = 10;
-                            else
+                        else
                             $saritilawah = 0;
-                            //end kalkulasi tilawah
+                        //end kalkulasi tilawah
                         ?>
                         <?php
-                            $tugasTerstruktur = (($nPeriodik->ukhuwah_islamiyah)+($nPeriodik->ukhuwah_wathoniyah))/2;
-                            $ujianKompetensi = (($nPeriodik->fardu_kifayah)+($nPeriodik->hafalan_doa)+($nPeriodik->baca_quran))/3;
-                            $aktivitasHarian = (($sholat)+($nPeriodik->dzikir)+($nPeriodik->tilawatil_quran))/3;
-                            $dpns11 = (($nPeriodik->kehadiran)+($tugasTerstruktur)+($ujianKompetensi)+($aktivitasHarian));
-                            ?>
+                        $tugasTerstruktur = (($nPeriodik->ukhuwah_islamiyah) + ($nPeriodik->ukhuwah_wathoniyah)) / 2;
+                        $ujianKompetensi = (($nPeriodik->fardu_kifayah) + ($nPeriodik->hafalan_doa) + ($nPeriodik->baca_quran)) / 3;
+                        $aktivitasHarian = (($sholat) + ($nPeriodik->dzikir) + ($nPeriodik->tilawatil_quran)) / 3;
+                        $dpns11 = (($nPeriodik->kehadiran) + ($tugasTerstruktur) + ($ujianKompetensi) + ($aktivitasHarian));
+                        ?>
                         @endforeach
                         @endforeach
                         @endif
-                        {{--  <b>DPNS 1</b> <a class="float-right text-muted">{{ $dpns11 }}</a>  --}}
+                        {{-- <b>DPNS 1</b> <a class="float-right text-muted">{{ $dpns11 }}</a> --}}
 
                         <table id="example" class="table table-bordered table-striped">
                             <thead>
@@ -140,21 +140,21 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Keluarga</th>
-                                    {{--  <th>DPNS 1</th>  --}}
+                                    {{-- <th>DPNS 1</th>  --}}
                                     <th>Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 0;?>
+                                <?php $no = 0; ?>
 
                                 @if (Auth::check())
                                 @foreach($mahasiswa as $mhs)
-                                <?php $no++;?>
+                                <?php $no++; ?>
                                 <tr>
                                     <td>{{ $no }}</td>
                                     <td>{{ $mhs->name }}</td>
                                     <td>Keluarga {{ $mhs->keluarga }}</td>
-                                    {{--  <td>{{ number_format($dpns11,2) }}</td>  --}}
+                                    {{-- <td>{{ number_format($dpns11,2) }}</td> --}}
                                     <td>
                                         <a href="{{ route('dpns1DetailKoordinator', $mhs->id) }}" type="button" class="btn btn-sm btn-info fas fa-eye">Detail DPNS 1</a>
 
@@ -180,5 +180,3 @@
 <!-- /.content-wrapper -->
 
 @endsection
-
-

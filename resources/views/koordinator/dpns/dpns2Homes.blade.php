@@ -39,11 +39,11 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        {{--  <a href="{{ route('tambahMahasiswa') }}" class="btn btn-info">Tambah Anggota Keluarga</a>
+                        {{-- <a href="{{ route('tambahMahasiswa') }}" class="btn btn-info">Tambah Anggota Keluarga</a>
                         --}}
-                        {{--  <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal"
+                        {{-- <a href="{{ route('mahasiswa.create') }}" class="btn btn-info" data-toggle="modal"
                         data-target=".bd-example-modal-sm">Tambah Nilai Periodik</a> --}}
-                        {{--  <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
+                        {{-- <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>  --}}
 
                     </div>
                     @if(session()->get('success'))
@@ -54,22 +54,24 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
                     <!-- /.card-header -->
                     <div class="card-body table-responsive">
 
-                        <table id="example1"  class="table display table-bordered table-striped">
+                        <table id="example1" class="table display table-bordered table-striped">
 
                             <thead>
                                 <tr>
-                                    {{--  <th>No</th>  --}}
+                                    {{-- <th>No</th>  --}}
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>Keluarga</th>
+                                    <th>NIM</th>
                                     <th>Prodi</th>
+                                    <th>Fakultas</th>
                                     <th>Jenis Kelamin</th>
+                                    <th>Keluarga</th>
                                     <th>DPNS 2</th>
                                     <th>Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 0;?>
+                                <?php $no = 0; ?>
 
                                 @if (Auth::check())
                                 @foreach($data_akhir as $nilai)
@@ -78,15 +80,16 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
                                 <tr>
                                     <td>{{$no}}</td>
                                     <td> {{ $nilai->name}}</td>
-                                    <td> Keluarga {{ $nilai->keluarga }}</td>
+                                    <td> {{ $nilai->nim}}</td>
                                     <td> {{ $nilai->prodi }}</td>
+                                    <td> {{ $nilai->fakultas}}</td>
                                     <td> {{ $nilai->jenis_kelamin }}</td>
+                                    <td> Keluarga {{ $nilai->keluarga }}</td>
                                     <td>
                                         {{ ($nilai->dpna_hasil)}}
                                     </td>
                                     <td>
-                                        <a href="{{ route('dpnaDetailKoordinator', $nilai->user_id) }}" type="button"
-                                            class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Detail DPNS 2</a>
+                                        <a href="{{ route('dpnaDetailKoordinator', $nilai->user_id) }}" type="button" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Detail DPNS 2</a>
 
                                     </td>
                                 </tr>
@@ -112,9 +115,7 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
 
 @section('styleExportExcel')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
 
 
 @endsection
-
-
