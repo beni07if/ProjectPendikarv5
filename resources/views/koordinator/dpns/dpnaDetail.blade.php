@@ -178,7 +178,7 @@
                                     <td>{{ $nPeriodik->tanggal }}</td>
                                     <td>{{ $dpna }}</td>
                                     <td>
-                                        <a href="{{ route('detailNPDpna', $nPeriodik->id) }}" class="btn btn-info btn-sm fas fa-eye">Detail</a>
+                                        <a href="{{ route('detailNPDpna', $nPeriodik->id) }}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Detail</a>
                                         @if(session()->get('success'))
                                         <div class="alert alert-success">
                                             {{ session()->get('success') }}
@@ -294,7 +294,7 @@
                             @endforeach
                             @endforeach
                             @endif
-                            <b>DPNA</b> <a class="float-right text-muted">{{ number_format($dpnaHasil,2) }} | {{ number_format($dpnaHasil,2)/16 }}</a>
+                            <b>Total NP | DPNA</b> <a class="float-right text-muted">{{ number_format($dpnaHasil,2) }} | {{ number_format($dpnaHasil,2)/16 }}</a>
                         </div>
                     </div>
                     <!-- /.card-body -->

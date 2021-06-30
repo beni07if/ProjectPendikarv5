@@ -416,8 +416,9 @@ class DpnsControllerAdmin extends Controller
     public function detailNPDpna($id)
     {
         $user = $this->middleware('auth:admin');
-        $mahasiswa = User::where('id', $id)->get();
         $nilaiPeriodik = NilaiPeriodik::where('id', $id)->get();
+
+        $mahasiswa = User::where('id', $nilaiPeriodik[0]->user_id)->get();
         return view('koordinator.dpns.detailNPDpna', compact('nilaiPeriodik', 'mahasiswa'));
     }
 
@@ -831,7 +832,7 @@ class DpnsControllerAdmin extends Controller
                     $data_sementara->fakultas = $diolah[$j]->fakultas;
                     $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
                 } else {
-                    $data_sementara->dpna_hasil = $data_sementara->dpnaa / 16;
+                    $data_sementara->dpna_hasil = $data_sementara->dpnaa / 4;
                     array_push($data_akhir, $data_sementara);
                     $data_sementara = (object)[];
                     $data_sementara->name = $diolah[$j]->name;
@@ -1036,7 +1037,7 @@ class DpnsControllerAdmin extends Controller
                     $data_sementara->fakultas = $diolah[$j]->fakultas;
                     $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
                 } else {
-                    $data_sementara->dpna_hasil = $data_sementara->dpnaa / 16;
+                    $data_sementara->dpna_hasil = $data_sementara->dpnaa / 8;
                     array_push($data_akhir, $data_sementara);
                     $data_sementara = (object)[];
                     $data_sementara->name = $diolah[$j]->name;
@@ -1241,7 +1242,7 @@ class DpnsControllerAdmin extends Controller
                     $data_sementara->fakultas = $diolah[$j]->name;
                     $data_sementara->jenis_kelamin = $diolah[$j]->jenis_kelamin;
                 } else {
-                    $data_sementara->dpna_hasil = $data_sementara->dpnaa / 16;
+                    $data_sementara->dpna_hasil = $data_sementara->dpnaa / 12;
                     array_push($data_akhir, $data_sementara);
                     $data_sementara = (object)[];
                     $data_sementara->name = $diolah[$j]->name;
@@ -1274,5 +1275,11 @@ class DpnsControllerAdmin extends Controller
         // }
         // return $data_akhir;
         return view('koordinator.dpns.dpns3Homes', compact('data_akhir', 'mahasiswa'));
+    }
+
+    public function apiTest(User $user)
+    {
+        $user = $user->find(Auth::user()->id);
+        return fractal()->item($user)->transformWith(new UserTransformer)->toArray();
     }
 }

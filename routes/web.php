@@ -139,6 +139,7 @@ Route::group(['prefix' => 'dpns3'], function () {
 //     Route::get('/', 'DPNAController@index')->name('dpna.home');
 // });
 Route::get('/dpna', 'MahasiswaController@dpnaweik')->name('dpnaa');
+Route::get('/dpnaMhs', 'MahasiswaController@dpnaMhs')->name('dpnaMhs');
 
 // Route::group(['prefix' => 'pengaduan'], function () {
 //     Route::get('/apiNP', 'PengaduanController@apiDpns1')->name('apiPengaduan');
@@ -300,6 +301,4 @@ Route::resource('post', 'DpnsControllerAdmin', ['only' => ['index'],]);
 
 Route::get('/api', 'DpnsControllerAdmin@apiStore')->name('apiStore');
 
-
-
-
+Route::get('users', 'DpnsControllerAdmin@api')->middleware('auth.api');

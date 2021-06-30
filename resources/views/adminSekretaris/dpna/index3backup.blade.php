@@ -1,15 +1,11 @@
-@extends('layouts.masterKoordinator')
-
-@section('dpnaHeaderExport')
-Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
-@endsection
+@extends('layouts.master')
 
 @section('navbarTitle2')
-<a href="#" class="nav-link">DPNS 2</a>
+<a href="#" class="nav-link">DPNA</a>
 @endsection
 
 @section('breadcrumb')
-<a href="#" class="nav-link">Sistem Penilaian Pendikar / DPNS 2</a>
+<a href="#" class="nav-link">Sistem Penilaian Pendikar / DPNA</a>
 @endsection
 
 @section('content')
@@ -21,12 +17,12 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>DPNS 2</h1>
+                    <h1>DPNA</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('mahasiswa.home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">DPNS 2</li>
+                        <li class="breadcrumb-item active">DPNA</li>
                     </ol>
                 </div>
             </div>
@@ -63,10 +59,9 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
                                     <th>Nama</th>
                                     <th>NIM</th>
                                     <th>Prodi</th>
-                                    <th>Fakultas</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Keluarga</th>
-                                    <th>DPNS 2</th>
+                                    <th>DPNA</th>
                                     <th>Keterangan</th>
                                 </tr>
                             </thead>
@@ -82,14 +77,13 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
                                     <td> {{ $nilai->name}}</td>
                                     <td> {{ $nilai->nim}}</td>
                                     <td> {{ $nilai->prodi }}</td>
-                                    <td> {{ $nilai->fakultas}}</td>
                                     <td> {{ $nilai->jenis_kelamin }}</td>
                                     <td> Keluarga {{ $nilai->keluarga }}</td>
                                     <td>
                                         {{ ($nilai->dpna_hasil)}}
                                     </td>
                                     <td>
-                                        <a href="{{ route('dpns2DetailKoordinator', $nilai->user_id) }}" type="button" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Detail DPNS 2</a>
+                                        <a href="{{ route('dpnaDetailKoordinator', $nilai->user_id) }}" type="button" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Detail DPNA</a>
 
                                     </td>
                                 </tr>
@@ -110,12 +104,5 @@ Daftar Peserta Nilai Akhir (DPNS 2) Mahasiswa Tahun 2021/2022
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-@endsection
-
-@section('styleExportExcel')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
-
 
 @endsection

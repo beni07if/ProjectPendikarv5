@@ -65,13 +65,23 @@ class AuthController extends Controller
 
     public function getCountries()
     {
-        $countries = DB::table('users')->pluck("name","id");
-        return view('koordinator.auth.login',compact('countries'));
+        $countries = DB::table('users')->pluck("name", "id");
+        return view('koordinator.auth.login', compact('countries'));
     }
 
-    public function getStates($id) 
+    public function getStates($id)
     {
-        $states = DB::table("states")->where("countries_id",$id)->pluck("name","id");
+        $states = DB::table("states")->where("countries_id", $id)->pluck("name", "id");
         return json_encode($states);
     }
+
+    // public function store(Request $request)
+    // {
+    //     return 'is work';
+    // }
+
+    // public function sign(Request $request)
+    // {
+    //     return 'is work';
+    // }
 }

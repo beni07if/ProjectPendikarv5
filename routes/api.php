@@ -13,6 +13,35 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::group(['prefix' => 'v1'], function () {
+//     Route::resource('user', 'UserController', [
+//         'except' => ['create', 'edit']
+//     ]);
+
+//     Route::resource('meeting', 'TestingMeetingController', [
+//         'except' => ['create', 'edit']
+//     ]);
+
+//     Route::resource('meeting/registration', 'RegistrationController', [
+//         'only' => ['store', 'destroy']
+//     ]);
+
+//     Route::post('/user/register', [
+//         'user' => 'AuthController@store'
+//     ]);
+
+//     Route::post('/user/sign', [
+//         'user' => 'AuthController@sign'
+//     ]);
+// });
+
+
+Route::group(['prefix' => 'v1'], function () {
+    // Route::get('/ApiNP', 'ApiController@testApiNP')->name('testApiNP');
+    Route::get('/ApiDpnaPendikar', 'ApiController@ApiDpnaPendikar')->name('ApiDpnaPendikar');
+    Route::get('/ApiDpnaPendikar/Prodi/{prodi}', 'ApiController@ApiDpnaPendikarProdi')->name('ApiDpnaPendikarProdi');
 });

@@ -89,7 +89,7 @@ Daftar Peserta Nilai Akhir (DPNS 1) Mahasiswa Tahun 2021/2022
                                         {{ ($nilai->dpna_hasil)}}
                                     </td>
                                     <td>
-                                        <a href="{{ route('dpnaDetailKoordinator', $nilai->user_id) }}" type="button" class="btn btn-sm btn-info "><i class="fas fa-eye"></i> Detail DPNS 1</a>
+                                        <a href="{{ route('dpns1DetailKoordinator', $nilai->user_id) }}" type="button" class="btn btn-sm btn-info "><i class="fas fa-eye"></i> Detail DPNS 1</a>
 
                                     </td>
                                 </tr>
