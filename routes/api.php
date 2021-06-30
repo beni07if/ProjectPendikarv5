@@ -40,8 +40,8 @@ use Illuminate\Http\Request;
 // });
 
 
-Route::group(['prefix' => 'v1'], function () {
-    // Route::get('/ApiNP', 'ApiController@testApiNP')->name('testApiNP');
-    Route::get('/ApiDpnaPendikar', 'ApiController@ApiDpnaPendikar')->name('ApiDpnaPendikar');
-    Route::get('/ApiDpnaPendikar/Prodi/{prodi}', 'ApiController@ApiDpnaPendikarProdi')->name('ApiDpnaPendikarProdi');
-});
+// Route::group(['prefix' => 'v1'], function () {
+//     // Route::get('/ApiNP', 'ApiController@testApiNP')->name('testApiNP');
+//     Route::get('/ApiDpnaPendikar', 'ApiController@ApiDpnaPendikar')->name('ApiDpnaPendikar');
+//     Route::get('/ApiDpnaPendikar/Prodi/{prodi}', 'ApiController@ApiDpnaPendikarProdi')->name('ApiDpnaPendikarProdi');
+// });
